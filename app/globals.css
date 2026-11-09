@@ -1,0 +1,26 @@
+@import "tailwindcss";
+
+/* Design tokens from Figma frame Login (662:14387). */
+:root {
+  --saa-bg: #00101a;
+  --saa-header-bg: rgba(11, 15, 18, 0.8);
+  --saa-divider: #2e3940;
+  --saa-text: #ffffff;
+  --saa-accent: #ffea9e;
+}
+
+@theme inline {
+  --color-saa-bg: var(--saa-bg);
+  --color-saa-header: var(--saa-header-bg);
+  --color-saa-divider: var(--saa-divider);
+  --color-saa-text: var(--saa-text);
+  --color-saa-accent: var(--saa-accent);
+  --font-sans: var(--font-montserrat);
+  --font-alt: var(--font-montserrat-alternates);
+}
+
+body {
+  background: var(--saa-bg);
+  color: var(--saa-text);
+  font-family: var(--font-montserrat), sans-serif;
+}

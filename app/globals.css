@@ -7,6 +7,12 @@
   --saa-divider: #2e3940;
   --saa-text: #ffffff;
   --saa-accent: #ffea9e;
+  /* Homepage (2167:9026) */
+  --saa-home-header-bg: rgba(16, 20, 23, 0.8);
+  --saa-border: #998c5f;
+  --saa-accent-soft: rgba(255, 234, 158, 0.1);
+  --saa-badge: #d4271d;
+  --saa-glow: 0 4px 4px 0 rgba(0, 0, 0, 0.25), 0 0 6px 0 #fae287;
 }
 
 @theme inline {
@@ -15,6 +21,11 @@
   --color-saa-divider: var(--saa-divider);
   --color-saa-text: var(--saa-text);
   --color-saa-accent: var(--saa-accent);
+  --color-saa-home-header: var(--saa-home-header-bg);
+  --color-saa-border: var(--saa-border);
+  --color-saa-accent-soft: var(--saa-accent-soft);
+  --color-saa-badge: var(--saa-badge);
+  --shadow-saa-glow: var(--saa-glow);
   --font-sans: var(--font-montserrat);
   --font-alt: var(--font-montserrat-alternates);
 }

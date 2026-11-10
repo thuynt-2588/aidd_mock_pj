@@ -5,7 +5,7 @@
 
 export const LOGIN_PATH = "/login";
 export const AUTH_CALLBACK_PATH = "/auth/callback";
-export const POST_LOGIN_PATH = "/todo";
+export const POST_LOGIN_PATH = "/";
 
 // Query flag carried back to /login on any sign-in failure. Every cause
 // (cancelled, denied, exchange error, start error) uses this one value (BR-003).

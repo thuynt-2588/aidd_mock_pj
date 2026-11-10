@@ -15,9 +15,8 @@ export default defineConfig({
   projects: [{ name: "chromium", use: { ...devices["Desktop Chrome"] } }],
   webServer: {
     command: "npm run dev -- -H 127.0.0.1 -p 3000",
-    // Readiness probe hits "/" (200 today). Probing /login would never pass
-    // before the screen exists, so the RED run could not reach assertions.
-    url: `${BASE_URL}/`,
+    // Readiness probe hits /login: "/" is auth-guarded and redirects.
+    url: `${BASE_URL}/login`,
     reuseExistingServer: true,
     timeout: 120_000,
   },

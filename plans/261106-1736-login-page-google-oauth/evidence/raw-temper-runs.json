@@ -1,0 +1,62 @@
+[
+  {
+    "command": "npm run e2e",
+    "exitCode": 1,
+    "summary": "Before harness fix: 5 passed, 1 failed. SC-002 aria-busy assertion timed out; route hold blocked page.evaluate on pending navigation."
+  },
+  {
+    "command": "npm run e2e",
+    "exitCode": 0,
+    "summary": "After harness fix (route.fulfill 204 on authorize hop): 6 passed, 6.7s."
+  },
+  {
+    "command": "npm run e2e",
+    "exitCode": 0,
+    "summary": "Repeat run 3: 6 passed, 7.3s. Stability check."
+  },
+  {
+    "command": "npm run e2e",
+    "exitCode": 0,
+    "summary": "Repeat run 4: 6 passed, 12.8s. Stability check, no flake across 4 runs."
+  },
+  {
+    "command": "npx tsc --noEmit",
+    "exitCode": 0,
+    "summary": "Typecheck clean, no output."
+  },
+  {
+    "command": "npx eslint app lib",
+    "exitCode": 0,
+    "summary": "Lint clean for app and lib, no output."
+  },
+  {
+    "command": "npm run build",
+    "exitCode": 0,
+    "summary": "Next 16.4.5 build compiled. Routes: / static, /login partial prerender, /auth/callback dynamic. Only warning: workspace-root lockfile notice, non-fatal."
+  },
+  {
+    "command": "node <scratchpad>/scan-client-bundle-secrets.mjs <project-root>",
+    "exitCode": 0,
+    "summary": "Scanned 23 files under .next/static: 0 hits for service_role, SUPABASE_AUTH_EXTERNAL_GOOGLE_SECRET, SUPABASE_SERVICE_ROLE_KEY."
+  },
+  {
+    "command": "node <scratchpad>/probe-sc002-bounded.mjs hold",
+    "exitCode": 0,
+    "summary": "Diagnostic only (not a suite). Hold mode: DOM samples after click all timed out at 3s, so the held navigation blocks evaluate. Script exit 0 via hard exit."
+  },
+  {
+    "command": "node <scratchpad>/probe-sc002-bounded.mjs 204",
+    "exitCode": 0,
+    "summary": "Diagnostic only. 204 mode: aria-busy=true and disabled=true at 50ms, URL stays /login. Product renders loading state correctly."
+  },
+  {
+    "command": "node <scratchpad>/probe-sc002-bounded.mjs abort",
+    "exitCode": 0,
+    "summary": "Diagnostic only. Abort mode: page navigated away from /login to / within about 300ms. Rejected as hold replacement."
+  },
+  {
+    "command": "node <scratchpad>/probe-sc002.mjs hold",
+    "exitCode": 124,
+    "summary": "Diagnostic only, first unbounded probe. Killed by 120s timeout: page.evaluate hung under the held navigation. Superseded by bounded probe."
+  }
+]

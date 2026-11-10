@@ -1,0 +1,5 @@
+{
+  "mode": "single",
+  "intents": ["Unauthenticated user signs in to SAA 2025 via Google OAuth from the /login screen (with VN/EN language switch)"],
+  "justification": ""
+}

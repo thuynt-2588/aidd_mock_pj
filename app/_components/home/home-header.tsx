@@ -6,11 +6,11 @@ import type { HomeMessages } from "@/lib/i18n/home-messages";
 import { AccountMenu } from "./account-menu";
 import { HOME_PATH, getHeaderNavItems, navLinkClass } from "./home-nav-items";
 
-type HomeHeaderProps = { t: HomeMessages; languageSelector: ReactNode };
+type HomeHeaderProps = { t: HomeMessages; languageSelector: ReactNode; activePath?: string };
 
 // A1 header: sticky 80px bar, rgba(16,20,23,.8), padding 12/144.
 // Logo 52x48 + nav (gap 64 / 24); right group gap 16: bell, language, account.
-export function HomeHeader({ t, languageSelector }: HomeHeaderProps) {
+export function HomeHeader({ t, languageSelector, activePath = HOME_PATH }: HomeHeaderProps) {
   return (
     <header className="sticky top-0 z-50 h-20 w-full bg-saa-home-header backdrop-blur-sm">
       <div className="mx-auto flex h-full max-w-[1512px] items-center justify-between gap-6 px-6 py-3 lg:px-36">
@@ -20,7 +20,7 @@ export function HomeHeader({ t, languageSelector }: HomeHeaderProps) {
           </Link>
           <nav className="hidden items-center gap-6 md:flex">
             {getHeaderNavItems(t).map(({ href, label }) => {
-              const selected = href === HOME_PATH;
+              const selected = href === activePath;
               return (
                 <Link
                   key={href}

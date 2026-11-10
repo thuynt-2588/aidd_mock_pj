@@ -39,6 +39,13 @@ describe("updateSupabaseSession", () => {
     expect(res.headers.get("cache-control")).toContain("no-store");
   });
 
+  it("also guards /awards-information", async () => {
+    getUser.mockResolvedValue({ data: { user: null } });
+    const res = await updateSupabaseSession(request("/awards-information"));
+    expect(res.status).toBe(307);
+    expect(res.headers.get("location")).toBe("http://127.0.0.1:3000/login");
+  });
+
   it("lets a signed-in user through to /", async () => {
     getUser.mockResolvedValue({ data: { user: { id: "u1" } } });
     const res = await updateSupabaseSession(request("/"));

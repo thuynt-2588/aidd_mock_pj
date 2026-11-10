@@ -4,11 +4,11 @@ import Link from "next/link";
 import type { HomeMessages } from "@/lib/i18n/home-messages";
 import { HOME_PATH, getFooterNavItems, navLinkClass } from "./home-nav-items";
 
-type HomeFooterProps = { t: HomeMessages };
+type HomeFooterProps = { t: HomeMessages; activePath?: string };
 
 // 7: border-top #2E3940, padding 40/90; logo 69x64, links gap 48 (16/24 700),
 // copyright Montserrat Alternates 700 16/24.
-export function HomeFooter({ t }: HomeFooterProps) {
+export function HomeFooter({ t, activePath = HOME_PATH }: HomeFooterProps) {
   return (
     <footer className="w-full border-t border-saa-divider">
       <div className="mx-auto flex max-w-[1512px] flex-wrap items-center justify-between gap-6 px-6 py-10 lg:px-[90px]">
@@ -21,8 +21,8 @@ export function HomeFooter({ t }: HomeFooterProps) {
               <Link
                 key={href}
                 href={href}
-                aria-current={href === HOME_PATH ? "page" : undefined}
-                className={`${navLinkClass(href === HOME_PATH)} text-base leading-6 tracking-[0.15px]`}
+                aria-current={href === activePath ? "page" : undefined}
+                className={`${navLinkClass(href === activePath)} text-base leading-6 tracking-[0.15px]`}
               >
                 {label}
               </Link>

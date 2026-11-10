@@ -5,16 +5,17 @@ import type { HomeMessages } from "@/lib/i18n/home-messages";
 import { ArrowUpRightIcon } from "./arrow-up-right-icon";
 import { SUN_KUDOS_PATH } from "./home-nav-items";
 
-type KudosSectionProps = { t: HomeMessages };
+// widthClass: 1120 on the homepage, 1152 on "Hệ thống giải" (D1).
+type KudosSectionProps = { t: HomeMessages; widthClass?: string };
 
 // D1/D2: 1120x500 card, radius 16, #0F0F0F + Figma artwork (background,
 // illustration and KUDOS logo exported as one image). Text column 457 wide,
 // inset 64px, vertically centred; "Chi tiết" is a 56px yellow button.
-export function KudosSection({ t }: KudosSectionProps) {
+export function KudosSection({ t, widthClass = "max-w-[1120px]" }: KudosSectionProps) {
   const { label, title, highlight, body, detail, imageAlt } = t.kudos;
   return (
-    <section className="relative mx-auto min-h-[500px] w-full max-w-[1120px] overflow-hidden rounded-2xl bg-[#0f0f0f]">
-      <Image src="/home/sun-kudos.png" alt="" fill sizes="(min-width: 1120px) 1120px, 100vw" className="object-cover" />
+    <section className={`relative mx-auto min-h-[500px] w-full ${widthClass} overflow-hidden rounded-2xl bg-[#0f0f0f]`}>
+      <Image src="/home/sun-kudos.png" alt="" fill sizes="(min-width: 1152px) 1152px, 100vw" className="object-cover" />
       {/* MM_MEDIA_Logo/Kudos: 364x72 at (672, 215) inside the 1120x500 card. */}
       <Image
         src="/home/kudos-logo.png"

@@ -6,7 +6,7 @@ import { getSupabaseEnv } from "./supabase-env";
 
 // Routes that need a signed-in user. Everything else passes through after the
 // session cookies have been refreshed.
-const PROTECTED_PATHS = new Set(["/"]);
+const PROTECTED_PATHS = new Set(["/", "/awards-information"]);
 
 const NO_STORE = "private, no-cache, no-store, must-revalidate, max-age=0";
 

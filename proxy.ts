@@ -1,9 +1,11 @@
 import type { NextRequest } from "next/server";
 
+import { prelaunchGateResponse } from "@/lib/countdown/prelaunch-proxy";
 import { updateSupabaseSession } from "@/lib/supabase/proxy-session";
 
 export async function proxy(request: NextRequest) {
-  return updateSupabaseSession(request);
+  // Prelaunch lock first: while it applies, nothing else on the site renders.
+  return prelaunchGateResponse(request) ?? updateSupabaseSession(request);
 }
 
 export const config = {

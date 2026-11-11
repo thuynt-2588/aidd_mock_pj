@@ -71,7 +71,7 @@ test("switches to English, persists the cookie and survives reload (SC-004)", as
   await expect(languageTrigger(page)).toBeVisible();
 
   await languageTrigger(page).click();
-  await page.getByRole("menuitem", { name: "EN" }).click();
+  await page.getByRole("menuitemradio", { name: "EN" }).click();
 
   await expectScreenCopy(page, "en");
   await expect(loginButton(page)).toBeVisible();

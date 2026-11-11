@@ -1,0 +1,417 @@
+{
+  "source": "v1-frame",
+  "slide": {
+    "position": 1,
+    "figmaNodeId": "721:4942",
+    "fileKey": "9ypp4enmFmdK3YAFJLIu6C",
+    "name": "Dropdown-ngôn ngữ",
+    "frameMissing": false
+  },
+  "otherSlides": [],
+  "tooLarge": false,
+  "outdated": false,
+  "metadataCheckedAt": null,
+  "warnings": [
+    "This design data was imported from MoMorph V1 and has not been checked against the Figma frame since. Open the slide in Screen Detail of the MoMorph Figma plugin, in the Figma file that contains the frame, to sync it."
+  ],
+  "result": {
+    "id": "721:4942",
+    "itemName": "Dropdown-ngôn ngữ",
+    "itemType": "FRAME",
+    "styles": {
+      "width": "215px",
+      "height": "304px",
+      "borderRadius": "0px",
+      "mixBlendMode": "pass-through",
+      "backgroundColor": "rgba(105, 105, 105, 1)"
+    },
+    "children": [
+      {
+        "id": "525:11713",
+        "itemName": "mms_A_Dropdown-List",
+        "itemType": "INSTANCE",
+        "styles": {
+          "border": "1px solid var(--Details-Border, #998C5F)",
+          "zIndex": "1",
+          "display": "flex",
+          "padding": "6px",
+          "position": "absolute",
+          "background": "var(--Details-Container-2, #00070C)",
+          "align-items": "flex-start",
+          "border-radius": "8px",
+          "flex-direction": "column"
+        },
+        "children": [
+          {
+            "id": "I525:11713;362:6085",
+            "itemName": "mms_A.1_tiếng Việt",
+            "itemType": "INSTANCE",
+            "styles": {
+              "width": "108px",
+              "height": "56px",
+              "zIndex": "1",
+              "display": "flex",
+              "padding": "0px",
+              "position": "absolute",
+              "alignItems": "center",
+              "borderRadius": "2px",
+              "mixBlendMode": "pass-through",
+              "flexDirection": "row",
+              "justifyContent": "flex-start",
+              "backgroundColor": "rgba(255, 234, 158, 0.20000000298023224)"
+            },
+            "children": [
+              {
+                "id": "I525:11713;362:6085;186:1821",
+                "itemName": "Button",
+                "itemType": "INSTANCE",
+                "styles": {
+                  "gap": "2px",
+                  "width": "108px",
+                  "height": "56px",
+                  "zIndex": "1",
+                  "display": "flex",
+                  "padding": "16px",
+                  "position": "absolute",
+                  "alignItems": "center",
+                  "borderRadius": "4px",
+                  "mixBlendMode": "pass-through",
+                  "flexDirection": "row",
+                  "justifyContent": "space-between"
+                },
+                "children": [
+                  {
+                    "id": "I525:11713;362:6085;186:1821;186:1937",
+                    "itemName": "Frame 485",
+                    "itemType": "FRAME",
+                    "styles": {
+                      "gap": "4px",
+                      "width": "53px",
+                      "height": "24px",
+                      "zIndex": "1",
+                      "display": "flex",
+                      "padding": "0px",
+                      "position": "absolute",
+                      "alignItems": "center",
+                      "borderRadius": "0px",
+                      "mixBlendMode": "pass-through",
+                      "flexDirection": "row",
+                      "justifyContent": "flex-start"
+                    },
+                    "children": [
+                      {
+                        "id": "I525:11713;362:6085;186:1821;186:1709",
+                        "itemName": "IC",
+                        "itemType": "INSTANCE",
+                        "styles": {
+                          "width": "24px",
+                          "height": "24px",
+                          "zIndex": "1",
+                          "position": "absolute",
+                          "borderRadius": "0px",
+                          "mixBlendMode": "pass-through"
+                        },
+                        "children": [
+                          {
+                            "id": "I525:11713;362:6085;186:1821;186:1709;178:1010",
+                            "itemName": "VN - Vietnam",
+                            "itemType": "FRAME",
+                            "styles": {
+                              "gap": "12.5px",
+                              "width": "20px",
+                              "height": "15px",
+                              "zIndex": "1",
+                              "display": "flex",
+                              "padding": "0px",
+                              "position": "absolute",
+                              "alignItems": "flex-start",
+                              "borderRadius": "0px",
+                              "mixBlendMode": "pass-through",
+                              "flexDirection": "column",
+                              "justifyContent": "flex-start",
+                              "backgroundColor": "rgba(255, 255, 255, 1)"
+                            },
+                            "children": [
+                              {
+                                "id": "I525:11713;362:6085;186:1821;186:1709;178:1011",
+                                "itemName": "flag",
+                                "itemType": "GROUP",
+                                "styles": {
+                                  "width": "20px",
+                                  "height": "15px",
+                                  "zIndex": "1",
+                                  "position": "absolute",
+                                  "mixBlendMode": "pass-through"
+                                },
+                                "children": [
+                                  {
+                                    "id": "I525:11713;362:6085;186:1821;186:1709;178:1012",
+                                    "itemName": "contents",
+                                    "itemType": "GROUP",
+                                    "styles": {
+                                      "width": "20px",
+                                      "height": "15px",
+                                      "zIndex": "1",
+                                      "position": "absolute",
+                                      "mixBlendMode": "pass-through"
+                                    },
+                                    "children": [
+                                      {
+                                        "id": "I525:11713;362:6085;186:1821;186:1709;178:1016",
+                                        "itemName": "mark",
+                                        "itemType": "GROUP",
+                                        "styles": {
+                                          "width": "9px",
+                                          "height": "10px",
+                                          "zIndex": "1",
+                                          "position": "absolute",
+                                          "mixBlendMode": "pass-through"
+                                        },
+                                        "children": []
+                                      }
+                                    ]
+                                  }
+                                ]
+                              }
+                            ]
+                          }
+                        ]
+                      },
+                      {
+                        "id": "I525:11713;362:6085;186:1821;186:1439",
+                        "itemName": "Awards Information Navigation Links",
+                        "itemType": "TEXT",
+                        "styles": {
+                          "width": "25px",
+                          "height": "24px",
+                          "zIndex": "1",
+                          "fontSize": "16px",
+                          "position": "absolute",
+                          "textAlign": "center",
+                          "fontFamily": "Montserrat",
+                          "fontWeight": "700",
+                          "lineHeight": "24px",
+                          "mixBlendMode": "pass-through",
+                          "letterSpacing": "0.15000000596046448px",
+                          "backgroundColor": "rgba(255, 255, 255, 1)"
+                        },
+                        "children": []
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "id": "I525:11713;362:6128",
+            "itemName": "mms_A.2_tiếng Anh",
+            "itemType": "INSTANCE",
+            "styles": {
+              "width": "110px",
+              "height": "56px",
+              "zIndex": "1",
+              "display": "flex",
+              "padding": "0px",
+              "position": "absolute",
+              "alignItems": "center",
+              "borderRadius": "0px",
+              "mixBlendMode": "pass-through",
+              "flexDirection": "row",
+              "justifyContent": "center"
+            },
+            "children": [
+              {
+                "id": "I525:11713;362:6128;186:1903",
+                "itemName": "Button",
+                "itemType": "INSTANCE",
+                "styles": {
+                  "width": "110px",
+                  "height": "56px",
+                  "zIndex": "1",
+                  "display": "flex",
+                  "padding": "16px",
+                  "position": "absolute",
+                  "alignItems": "center",
+                  "borderRadius": "4px",
+                  "mixBlendMode": "pass-through",
+                  "flexDirection": "row",
+                  "justifyContent": "space-between"
+                },
+                "children": [
+                  {
+                    "id": "I525:11713;362:6128;186:1903;186:1937",
+                    "itemName": "Content",
+                    "itemType": "FRAME",
+                    "styles": {
+                      "gap": "4px",
+                      "width": "52px",
+                      "height": "24px",
+                      "zIndex": "1",
+                      "display": "flex",
+                      "padding": "0px",
+                      "position": "absolute",
+                      "alignItems": "center",
+                      "borderRadius": "0px",
+                      "mixBlendMode": "pass-through",
+                      "flexDirection": "row",
+                      "justifyContent": "flex-start"
+                    },
+                    "children": [
+                      {
+                        "id": "I525:11713;362:6128;186:1903;186:1709",
+                        "itemName": "IC",
+                        "itemType": "INSTANCE",
+                        "styles": {
+                          "width": "24px",
+                          "height": "24px",
+                          "zIndex": "1",
+                          "position": "absolute",
+                          "borderRadius": "0px",
+                          "mixBlendMode": "pass-through"
+                        },
+                        "children": [
+                          {
+                            "id": "I525:11713;362:6128;186:1903;186:1709;178:946",
+                            "itemName": "GB-NIR - Northern Ireland",
+                            "itemType": "FRAME",
+                            "styles": {
+                              "width": "20px",
+                              "height": "15px",
+                              "zIndex": "1",
+                              "position": "absolute",
+                              "borderRadius": "0px",
+                              "mixBlendMode": "pass-through",
+                              "backgroundColor": "rgba(255, 255, 255, 1)"
+                            },
+                            "children": [
+                              {
+                                "id": "I525:11713;362:6128;186:1903;186:1709;178:947",
+                                "itemName": "flag",
+                                "itemType": "GROUP",
+                                "styles": {
+                                  "width": "20px",
+                                  "height": "15px",
+                                  "zIndex": "1",
+                                  "position": "absolute",
+                                  "mixBlendMode": "pass-through"
+                                },
+                                "children": [
+                                  {
+                                    "id": "I525:11713;362:6128;186:1903;186:1709;178:948",
+                                    "itemName": "contents",
+                                    "itemType": "GROUP",
+                                    "styles": {
+                                      "width": "20px",
+                                      "height": "15px",
+                                      "zIndex": "1",
+                                      "position": "absolute",
+                                      "mixBlendMode": "pass-through"
+                                    },
+                                    "children": [
+                                      {
+                                        "id": "I525:11713;362:6128;186:1903;186:1709;178:951",
+                                        "itemName": "mark 1",
+                                        "itemType": "GROUP",
+                                        "styles": {
+                                          "width": "25px",
+                                          "height": "18px",
+                                          "zIndex": "1",
+                                          "position": "absolute",
+                                          "mixBlendMode": "pass-through"
+                                        },
+                                        "children": [
+                                          {
+                                            "id": "I525:11713;362:6128;186:1903;186:1709;178:952",
+                                            "itemName": "contents",
+                                            "itemType": "GROUP",
+                                            "styles": {
+                                              "width": "25px",
+                                              "height": "18px",
+                                              "zIndex": "1",
+                                              "position": "absolute",
+                                              "mixBlendMode": "pass-through"
+                                            },
+                                            "children": [
+                                              {
+                                                "id": "I525:11713;362:6128;186:1903;186:1709;178:953",
+                                                "itemName": "stripe",
+                                                "itemType": "GROUP",
+                                                "styles": {
+                                                  "width": "25px",
+                                                  "height": "18px",
+                                                  "zIndex": "1",
+                                                  "position": "absolute",
+                                                  "mixBlendMode": "pass-through"
+                                                },
+                                                "children": []
+                                              },
+                                              {
+                                                "id": "I525:11713;362:6128;186:1903;186:1709;178:956",
+                                                "itemName": "stripe",
+                                                "itemType": "GROUP",
+                                                "styles": {
+                                                  "width": "25px",
+                                                  "height": "17px",
+                                                  "zIndex": "1",
+                                                  "position": "absolute",
+                                                  "mixBlendMode": "pass-through"
+                                                },
+                                                "children": []
+                                              },
+                                              {
+                                                "id": "I525:11713;362:6128;186:1903;186:1709;178:959",
+                                                "itemName": "cross",
+                                                "itemType": "GROUP",
+                                                "styles": {
+                                                  "width": "23px",
+                                                  "height": "18px",
+                                                  "zIndex": "1",
+                                                  "position": "absolute",
+                                                  "mixBlendMode": "pass-through"
+                                                },
+                                                "children": []
+                                              }
+                                            ]
+                                          }
+                                        ]
+                                      }
+                                    ]
+                                  }
+                                ]
+                              }
+                            ]
+                          }
+                        ]
+                      },
+                      {
+                        "id": "I525:11713;362:6128;186:1903;186:1439",
+                        "itemName": "Awards Information Navigation Links",
+                        "itemType": "TEXT",
+                        "styles": {
+                          "width": "24px",
+                          "height": "24px",
+                          "zIndex": "1",
+                          "fontSize": "16px",
+                          "position": "absolute",
+                          "textAlign": "center",
+                          "fontFamily": "Montserrat",
+                          "fontWeight": "700",
+                          "lineHeight": "24px",
+                          "mixBlendMode": "pass-through",
+                          "letterSpacing": "0.15000000596046448px",
+                          "backgroundColor": "rgba(255, 255, 255, 1)"
+                        },
+                        "children": []
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

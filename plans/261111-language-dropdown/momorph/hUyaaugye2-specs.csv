@@ -1,0 +1,30 @@
+﻿No,Item Name,UI Parts,Item Type,Description,Trigger,Destination,Interaction Note,Data Type,Required,Format,Max Length,Min Length,Default Value,Validation Note,Table Name,Column Name,Database Note,Active status,Item ID
+A,Dropdown-List,525:11713,dropdown,"Dropdown chọn ngôn ngữ.
+
+Hiển thị:
+  - Selected: vùng trên, nền xám đậm, cờ Việt Nam + 'VN'
+  - Option: vùng dưới, nền đen, cờ Anh + 'EN'
+
+Chức năng:
+- Click: mở/đóng menu
+- Chọn 'EN'/'VN': cập nhật giá trị hiển thị và đóng menu",,,,,Optional,,,,,,,,,active,aa481471-f193-4abb-9d8f-4ed6c793d54d
+A.1,tiếng Việt,I525:11713;362:6085,list_item,"Item chọn ngôn ngữ 'VN' trong dropdown.
+
+Hiển thị:
+  - Cờ: icon
+  - Mã: 'VN'
+
+Chức năng:
+- Click: chọn 'Tiếng Việt' và đóng dropdown
+- State: hover hiển thị highlight, selected có nền khác để phân biệt",,,,,Optional,,,,,,,,,active,20c15690-ae18-44ff-8d97-d065889354bb
+A.2,tiếng Anh,I525:11713;362:6128,button,"Người dùng chọn ngôn ngữ 'EN' trong dropdown.
+
+Display:
+  - Icon: cờ Anh (bên trái)
+  - Label: 'EN' (chữ trắng)
+  - Kích thước: 110x56px, nền tối
+
+Function:
+  - Click: chọn 'EN' và đóng dropdown, cập nhật ngôn ngữ giao diện
+  - Hover: đổi nền để hiển thị trạng thái tương tác
+  - State: active hiển thị nền highlight",,,,,Optional,,,,,,,,,active,afb3096a-19e9-4861-8d43-0c3fe5a6869c

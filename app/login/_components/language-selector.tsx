@@ -9,22 +9,30 @@ type LanguageSelectorProps = {
   onSelect: (locale: Locale) => void | Promise<void>;
 };
 
-const OPTIONS: { locale: Locale; label: string }[] = [
-  { locale: "vi", label: "VN" },
-  { locale: "en", label: "EN" },
+const OPTIONS: { locale: Locale; label: string; flag: string }[] = [
+  { locale: "vi", label: "VN", flag: "/login/flag-vn.svg" },
+  { locale: "en", label: "EN", flag: "/login/flag-en.svg" },
 ];
 
-function Flag({ locale }: { locale: Locale }) {
-  // Only the VN flag exists in the design; EN is text only.
-  if (locale !== "vi") return null;
-  return <Image src="/login/flag-vn.svg" alt="" width={24} height={24} className="size-6" />;
+// Figma "IC" 24x24 slot holding a 20x15 flag (exported flags are 20x15).
+function Flag({ src }: { src: string }) {
+  return (
+    <span className="flex size-6 shrink-0 items-center justify-center">
+      <Image src={src} alt="" width={20} height={15} className="h-[15px] w-5" />
+    </span>
+  );
 }
 
+const TEXT = "text-base font-bold leading-6 tracking-[0.15px] text-saa-text";
+
 // Trigger 108x56, padding 16, radius 4; Montserrat 700 / 16px / 0.15px.
+// List = "Dropdown-ngôn ngữ" (MoMorph hUyaaugye2, Figma 721:4942):
+// 1px #998C5F border, #00070C, radius 8, padding 6; items 110x56, the
+// selected one highlighted rgba(255,234,158,0.2) with radius 2.
 export function LanguageSelector({ current, onSelect }: LanguageSelectorProps) {
   const [open, setOpen] = useState(false);
   const rootRef = useRef<HTMLDivElement>(null);
-  const currentLabel = OPTIONS.find((o) => o.locale === current)?.label ?? "VN";
+  const selected = OPTIONS.find((o) => o.locale === current) ?? OPTIONS[0];
 
   useEffect(() => {
     if (!open) return;
@@ -40,9 +48,6 @@ export function LanguageSelector({ current, onSelect }: LanguageSelectorProps) {
     };
   }, [open]);
 
-  const itemClass =
-    "flex h-14 w-full items-center gap-1 px-4 text-left text-base font-bold leading-6 tracking-[0.15px] text-saa-text transition-colors hover:bg-white/10 focus-visible:bg-white/10 focus-visible:outline-none";
-
   return (
     <div ref={rootRef} className="relative">
       <button
@@ -50,34 +55,42 @@ export function LanguageSelector({ current, onSelect }: LanguageSelectorProps) {
         aria-haspopup="menu"
         aria-expanded={open}
         onClick={() => setOpen((v) => !v)}
-        className={`${itemClass} w-[108px] justify-between gap-0.5 rounded focus-visible:outline-2 focus-visible:outline-white`}
+        className={`${TEXT} flex h-14 w-[108px] items-center justify-between gap-0.5 rounded px-4 transition-colors hover:bg-white/10 focus-visible:bg-white/10 focus-visible:outline-2 focus-visible:outline-white`}
       >
         <span className="flex items-center gap-1">
-          <Flag locale={current} />
-          {currentLabel}
+          <Flag src={selected.flag} />
+          {selected.label}
         </span>
         <Image src="/login/chevron-down.svg" alt="" width={24} height={24} className="size-6" />
       </button>
       {open && (
         <div
           role="menu"
-          className="absolute right-0 top-full mt-1 w-[108px] overflow-hidden rounded border border-saa-divider bg-saa-bg"
+          className="absolute right-0 top-full z-50 mt-1 flex flex-col rounded-lg border border-saa-border bg-saa-container-2 p-1.5"
         >
-          {OPTIONS.map(({ locale, label }) => (
-            <button
-              key={locale}
-              type="button"
-              role="menuitem"
-              onClick={async () => {
-                setOpen(false);
-                await onSelect(locale);
-              }}
-              className={itemClass}
-            >
-              <Flag locale={locale} />
-              {label}
-            </button>
-          ))}
+          {OPTIONS.map(({ locale, label, flag }) => {
+            const isSelected = locale === current;
+            return (
+              <button
+                key={locale}
+                type="button"
+                role="menuitemradio"
+                aria-checked={isSelected}
+                onClick={async () => {
+                  setOpen(false);
+                  if (!isSelected) await onSelect(locale);
+                }}
+                className={`${TEXT} flex h-14 w-[110px] items-center gap-1 rounded-[2px] px-4 text-left transition-colors focus-visible:outline-none ${
+                  isSelected
+                    ? "bg-saa-accent-selected"
+                    : "hover:bg-white/10 focus-visible:bg-white/10"
+                }`}
+              >
+                <Flag src={flag} />
+                {label}
+              </button>
+            );
+          })}
         </div>
       )}
     </div>

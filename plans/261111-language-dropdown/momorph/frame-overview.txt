@@ -1,0 +1,166 @@
+{
+  "source": "v1-frame",
+  "slide": {
+    "position": 1,
+    "figmaNodeId": "721:4942",
+    "fileKey": "9ypp4enmFmdK3YAFJLIu6C",
+    "name": "Dropdown-ngôn ngữ",
+    "frameMissing": false
+  },
+  "otherSlides": [],
+  "tooLarge": false,
+  "outdated": false,
+  "metadataCheckedAt": null,
+  "warnings": [
+    "This design data was imported from MoMorph V1 and has not been checked against the Figma frame since. Open the slide in Screen Detail of the MoMorph Figma plugin, in the Figma file that contains the frame, to sync it."
+  ],
+  "result": {
+    "id": "721:4942",
+    "name": "Dropdown-ngôn ngữ",
+    "type": "FRAME",
+    "children": [
+      {
+        "id": "525:11713",
+        "name": "mms_A_Dropdown-List",
+        "type": "INSTANCE",
+        "componentId": "362:6179",
+        "children": [
+          {
+            "id": "I525:11713;362:6085",
+            "name": "mms_A.1_tiếng Việt",
+            "type": "INSTANCE",
+            "componentId": "186:1692",
+            "children": [
+              {
+                "id": "I525:11713;362:6085;186:1821",
+                "name": "Button",
+                "type": "INSTANCE",
+                "componentId": "186:1433",
+                "children": [
+                  {
+                    "id": "I525:11713;362:6085;186:1821;186:1937",
+                    "name": "Frame 485",
+                    "type": "FRAME",
+                    "children": [
+                      {
+                        "id": "I525:11713;362:6085;186:1821;186:1709",
+                        "name": "IC",
+                        "type": "INSTANCE",
+                        "componentId": "178:1019",
+                        "children": [
+                          {
+                            "id": "I525:11713;362:6085;186:1821;186:1709;178:1010",
+                            "name": "VN - Vietnam",
+                            "type": "FRAME",
+                            "children": [
+                              {
+                                "id": "I525:11713;362:6085;186:1821;186:1709;178:1011",
+                                "name": "flag",
+                                "type": "GROUP",
+                                "children": [
+                                  {
+                                    "id": "I525:11713;362:6085;186:1821;186:1709;178:1012",
+                                    "name": "contents",
+                                    "type": "GROUP",
+                                    "children": [
+                                      {
+                                        "id": "I525:11713;362:6085;186:1821;186:1709;178:1016",
+                                        "name": "mark",
+                                        "type": "GROUP"
+                                      }
+                                    ]
+                                  }
+                                ]
+                              }
+                            ]
+                          }
+                        ]
+                      },
+                      {
+                        "id": "I525:11713;362:6085;186:1821;186:1439",
+                        "name": "Awards Information Navigation Links",
+                        "type": "TEXT",
+                        "text": "VN"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "id": "I525:11713;362:6128",
+            "name": "mms_A.2_tiếng Anh",
+            "type": "INSTANCE",
+            "componentId": "186:1694",
+            "children": [
+              {
+                "id": "I525:11713;362:6128;186:1903",
+                "name": "Button",
+                "type": "INSTANCE",
+                "componentId": "186:1433",
+                "children": [
+                  {
+                    "id": "I525:11713;362:6128;186:1903;186:1937",
+                    "name": "Content",
+                    "type": "FRAME",
+                    "children": [
+                      {
+                        "id": "I525:11713;362:6128;186:1903;186:1709",
+                        "name": "IC",
+                        "type": "INSTANCE",
+                        "componentId": "178:967",
+                        "children": [
+                          {
+                            "id": "I525:11713;362:6128;186:1903;186:1709;178:946",
+                            "name": "GB-NIR - Northern Ireland",
+                            "type": "FRAME",
+                            "children": [
+                              {
+                                "id": "I525:11713;362:6128;186:1903;186:1709;178:947",
+                                "name": "flag",
+                                "type": "GROUP",
+                                "children": [
+                                  {
+                                    "id": "I525:11713;362:6128;186:1903;186:1709;178:948",
+                                    "name": "contents",
+                                    "type": "GROUP",
+                                    "children": [
+                                      {
+                                        "id": "I525:11713;362:6128;186:1903;186:1709;178:951",
+                                        "name": "mark 1",
+                                        "type": "GROUP",
+                                        "children": [
+                                          {
+                                            "id": "I525:11713;362:6128;186:1903;186:1709;178:952",
+                                            "name": "contents",
+                                            "type": "GROUP",
+                                            "childCount": 3
+                                          }
+                                        ]
+                                      }
+                                    ]
+                                  }
+                                ]
+                              }
+                            ]
+                          }
+                        ]
+                      },
+                      {
+                        "id": "I525:11713;362:6128;186:1903;186:1439",
+                        "name": "Awards Information Navigation Links",
+                        "type": "TEXT",
+                        "text": "EN"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

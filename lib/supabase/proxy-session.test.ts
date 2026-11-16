@@ -46,6 +46,13 @@ describe("updateSupabaseSession", () => {
     expect(res.headers.get("location")).toBe("http://127.0.0.1:3000/login");
   });
 
+  it("also guards /sun-kudos", async () => {
+    getUser.mockResolvedValue({ data: { user: null } });
+    const res = await updateSupabaseSession(request("/sun-kudos"));
+    expect(res.status).toBe(307);
+    expect(res.headers.get("location")).toBe("http://127.0.0.1:3000/login");
+  });
+
   it("lets a signed-in user through to /", async () => {
     getUser.mockResolvedValue({ data: { user: { id: "u1" } } });
     const res = await updateSupabaseSession(request("/"));

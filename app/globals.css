@@ -16,6 +16,11 @@
   /* Dropdown-ngôn ngữ (721:4942): Details-Container-2 */
   --saa-container-2: #00070c;
   --saa-accent-selected: rgba(255, 234, 158, 0.2);
+  /* Sun* Kudos (2940:13431) */
+  --saa-card: #fff8e1;
+  --saa-card-content: rgba(255, 234, 158, 0.4);
+  --saa-muted: #999999;
+  --saa-spotlight-match: #f17676;
 }
 
 @theme inline {
@@ -31,6 +36,10 @@
   --shadow-saa-glow: var(--saa-glow);
   --color-saa-container-2: var(--saa-container-2);
   --color-saa-accent-selected: var(--saa-accent-selected);
+  --color-saa-card: var(--saa-card);
+  --color-saa-card-content: var(--saa-card-content);
+  --color-saa-muted: var(--saa-muted);
+  --color-saa-spotlight-match: var(--saa-spotlight-match);
   --font-sans: var(--font-montserrat);
   --font-alt: var(--font-montserrat-alternates);
 }
@@ -39,4 +48,17 @@ body {
   background: var(--saa-bg);
   color: var(--saa-text);
   font-family: var(--font-montserrat), sans-serif;
+}
+
+/* Sun* Kudos D.3 (Figma Frame 545): 2px #999 scrollbar, radius 8. */
+.kudos-scrollbar {
+  scrollbar-width: thin;
+  scrollbar-color: var(--saa-muted) transparent;
+}
+.kudos-scrollbar::-webkit-scrollbar {
+  width: 2px;
+}
+.kudos-scrollbar::-webkit-scrollbar-thumb {
+  border-radius: 8px;
+  background: var(--saa-muted);
 }

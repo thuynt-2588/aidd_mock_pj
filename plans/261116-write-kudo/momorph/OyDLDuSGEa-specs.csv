@@ -1,0 +1,68 @@
+﻿No,Item Name,UI Parts,Item Type,Description,Trigger,Destination,Interaction Note,Data Type,Required,Format,Max Length,Min Length,Default Value,Validation Note,Table Name,Column Name,Database Note,Active status,Item ID
+A,Title,I1002:12682;1002:12500,label,"Tiêu đề hiển thị 'Add link' trên đầu hộp dialog.
+
+Function:
+- Static: Hiển thị tiêu đề, không tương tác",,,,,Optional,,,,,,,,,active,d158fe4a-e4b0-4c65-8a43-b8bf46598fac
+B,Text,I1002:12682;1002:12501,text_form,"Trường nhập 'Text' cho văn bản hiển thị của liên kết.
+Hiển thị:
+  - Label: 'Text' - nhãn bên trái
+  - Input box: ô nhập văn bản (672x56px)
+Chức năng:
+- Nhập: Kiểm tra độ dài 1-100 ký tự
+- Empty: Hiển thị lỗi khi để trống",,,,string,Required,,100,1,,"Độ dài 1-100 ký tự
+Trường bắt buộc
+Không chỉ gồm khoảng trắng",,,,active,3dfcac67-aef6-42b6-b899-c645513e48d5
+B.1,Title,I1002:12682;1002:12502,label,"Nhãn cho ô nhập 'Text' trong modal 'Add link'.
+
+Function:
+- Hiển thị: Văn bản 'Text' bên trái ô nhập
+- Click: Click vào nhãn chuyển focus tới ô nhập tương ứng",,,,,Optional,,,,,,,,,active,3fceb44a-11ed-4554-8ac9-42ccf40372ba
+B.2,Text box,I1002:12682;1002:12503,text_form,"Trường để nhập văn bản hiển thị cho liên kết.
+
+Display:
+  - Label: 'Text' - nhãn bên trái
+  - Input box: Text field (610x56px, bo góc, nền trắng, viền mảnh)
+
+Function:
+- Input: Nhập văn bản hiển thị cho liên kết
+- Focus: Hiện viền nổi (highlight) khi được focus",,,,string,Required,,100,1,,"Bắt buộc, không gồm chỉ khoảng trắng",,,,active,3811fedf-c1fd-4b95-a87a-b17b77957413
+C,Liên kết,I1002:12682;1002:12652,text_form,"Trường nhập đường dẫn trong modal 'Add link'.
+Hiển thị:
+  - Input box: ô nhập văn bản, kích thước 672x56 px, có viền nhẹ
+  - Label: 'Link' ở bên trái
+Function:
+- Input: Nhập URL
+- Blur: Kiểm tra định dạng URL và hiển thị lỗi nếu không hợp lệ",,,,string,Required,url,2048,5,,"Định dạng URL hợp lệ (http/https)
+Độ dài 5-2048 ký tự
+Trường bắt buộc",,,,active,69901afc-87d1-4cc0-a434-196bd6b4673d
+C.1,Tiêu đề,I1002:12682;1002:12653,label,"Nhãn cho ô nhập liên kết hiển thị 'Link'.
+
+Function:
+- Display: Hiển thị 'Link' bên trái ô nhập để người dùng biết nhập URL
+- Interaction: Không tương tác, chỉ để thông tin",,,,,Optional,,,,,,,,,active,f474f2a6-e435-4011-8b88-fa6225feccd1
+C.2,Text box,I1002:12682;1002:12654,text_form,"Trường nhập văn bản cho liên kết trong hộp 'Add link'.
+Hiển thị:
+  - Label: 'Text'
+  - Input box: 609x56 px
+Chức năng:
+- Input: Nhập văn bản hiển thị cho liên kết
+- Lưu: Nếu trống hoặc >2048 ký tự, báo lỗi và không lưu",,,,string,Required,,2046,5,,"Độ dài 5-2048 ký tự
+Trường bắt buộc",,,,active,c3f66378-dcc3-4297-b67e-3e39e7a06530
+D,Button,I1002:12682;1002:12543,button_group,"Nhóm nút trong modal 'Add link' để hủy hoặc lưu liên kết.
+
+Hiển thị:
+  - 'Hủy': nút nhỏ, viền, icon 'X'
+  - 'Lưu': nút lớn, nền vàng, icon 'link'
+
+Chức năng:
+- Click 'Hủy': Đóng modal
+- Click 'Lưu': Validate các trường; nếu hợp lệ lưu và đóng; nếu lỗi hiển thị thông báo",,,,,Optional,,,,,,,,,active,f17e9df7-e67c-4e79-a692-93727c9444f6
+D.1,Button Huỷ,I1002:12682;1002:12544,button,"Nút 'Hủy' đóng hộp 'Add link' không lưu thay đổi.
+
+Function:
+- Click: Đóng modal và hủy thay đổi",,,,,Optional,,,,,,,,,active,f957ee61-bd6e-46da-a471-7050f73a3239
+D.2,Button Lưu,I1002:12682;1002:12545,button,"Nút 'Lưu' có icon liên kết để lưu đường dẫn vừa nhập.
+
+Function:
+- Click: Kiểm tra và lưu link; nếu thành công đóng modal, nếu lỗi hiển thị thông báo.",,,,,Optional,,,,,,,,,active,a02668a9-55a3-492a-a93e-91b01ffd984d
+

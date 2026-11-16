@@ -1,0 +1,90 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+# A newer push to the same branch / PR cancels the run still in progress.
+concurrency:
+  group: ci-${{ github.ref }}
+  cancel-in-progress: true
+
+permissions:
+  contents: read
+
+jobs:
+  # Fast checks: no database needed.
+  checks:
+    name: Lint, typecheck, unit tests, build
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+          cache: npm
+      - run: npm ci
+      - run: npm run lint
+      - run: npm run typecheck
+      - run: npm test
+      # The build only needs the public variables to exist; nothing is fetched
+      # from Supabase while prerendering.
+      - run: npm run build
+        env:
+          NEXT_PUBLIC_SUPABASE_URL: http://127.0.0.1:54321
+          NEXT_PUBLIC_SUPABASE_ANON_KEY: ci-build-placeholder
+          NEXT_PUBLIC_SITE_OPEN_AT: 2026-01-01T09:00:00+07:00
+
+  # Playwright against a local Supabase (Docker) with supabase/migrations and
+  # supabase/seed.sql, the same setup as on a developer machine.
+  e2e:
+    name: E2E (Playwright + local Supabase)
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    env:
+      # supabase/config.toml enables Google sign-in; the E2E tests use e-mail
+      # sign-up instead, so placeholders are enough to start the stack.
+      SUPABASE_AUTH_EXTERNAL_GOOGLE_CLIENT_ID: ci-placeholder
+      SUPABASE_AUTH_EXTERNAL_GOOGLE_SECRET: ci-placeholder
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+          cache: npm
+      - run: npm ci
+
+      - name: Start local Supabase
+        # Services the app and the tests do not use are left out to save time.
+        run: npx supabase start -x studio,imgproxy,edge-runtime,logflare,vector,supavisor,mailpit,postgres-meta,realtime
+
+      - name: Write .env.local for the app and the tests
+        run: |
+          eval "$(npx supabase status -o env)"
+          {
+            echo "NEXT_PUBLIC_SUPABASE_URL=$API_URL"
+            echo "NEXT_PUBLIC_SUPABASE_ANON_KEY=$ANON_KEY"
+            # Opening time in the past: the site is open (prelaunch specs skip).
+            echo "NEXT_PUBLIC_SITE_OPEN_AT=2026-01-01T09:00:00+07:00"
+          } > .env.local
+
+      - name: Install Playwright browser
+        run: npx playwright install --with-deps chromium
+
+      - name: Run Playwright
+        run: npm run e2e
+
+      - name: Upload Playwright traces
+        if: failure()
+        uses: actions/upload-artifact@v4
+        with:
+          name: playwright-test-results
+          path: test-results/
+          retention-days: 7
+
+      - name: Stop local Supabase
+        if: always()
+        run: npx supabase stop --no-backup

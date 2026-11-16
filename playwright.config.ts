@@ -18,7 +18,12 @@ export default defineConfig({
     baseURL: BASE_URL,
     trace: "retain-on-failure",
   },
-  projects: [{ name: "chromium", use: { ...devices["Desktop Chrome"] } }],
+  projects: [
+    { name: "chromium", use: { ...devices["Desktop Chrome"] }, testIgnore: /(write-kudo|kudo-heart)\.spec\.ts/ },
+    // Specs that ADD kudos run after every read-only spec: new kudos go to the
+    // top of All Kudos and change the seed's badge tiers, which those specs read.
+    { name: "chromium-writes", use: { ...devices["Desktop Chrome"] }, testMatch: /(write-kudo|kudo-heart)\.spec\.ts/, dependencies: ["chromium"] },
+  ],
   webServer: EXTERNAL_BASE_URL ? undefined : {
     command: "npm run dev -- -H 127.0.0.1 -p 3000",
     // Readiness probe hits /login: "/" is auth-guarded and redirects.

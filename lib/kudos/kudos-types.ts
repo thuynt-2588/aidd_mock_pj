@@ -1,7 +1,10 @@
+import type { KudoDoc } from "./kudo-doc";
+
 // Shapes read from the Sun* Kudos views (supabase/migrations/*_sun_kudos.sql).
 
 export type KudoPerson = {
-  id: string;
+  /** Null for the sender of an anonymous kudos (unless you sent it). */
+  id: string | null;
   name: string;
   avatarUrl: string | null;
   department: string | null;
@@ -13,6 +16,9 @@ export type KudoView = {
   id: string;
   title: string;
   content: string;
+  /** Rich text ("Viết Kudo"); null for older kudos, which only have `content`. */
+  contentDoc: KudoDoc | null;
+  isAnonymous: boolean;
   imageUrls: string[];
   createdAt: string;
   sender: KudoPerson;

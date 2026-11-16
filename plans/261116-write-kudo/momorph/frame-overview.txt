@@ -1,0 +1,1267 @@
+{
+  "source": "v1-frame",
+  "slide": {
+    "position": 1,
+    "figmaNodeId": "520:11602",
+    "fileKey": "9ypp4enmFmdK3YAFJLIu6C",
+    "name": "Viết Kudo",
+    "frameMissing": false
+  },
+  "otherSlides": [],
+  "tooLarge": false,
+  "outdated": false,
+  "metadataCheckedAt": null,
+  "warnings": [
+    "This design data was imported from MoMorph V1 and has not been checked against the Figma frame since. Open the slide in Screen Detail of the MoMorph Figma plugin, in the Figma file that contains the frame, to sync it."
+  ],
+  "result": {
+    "id": "520:11602",
+    "name": "Viết Kudo",
+    "type": "FRAME",
+    "children": [
+      {
+        "id": "520:11605",
+        "name": "Cover",
+        "type": "RECTANGLE"
+      },
+      {
+        "id": "520:11606",
+        "name": "Header",
+        "type": "INSTANCE",
+        "componentId": "186:1602",
+        "children": [
+          {
+            "id": "I520:11606;186:2166",
+            "name": "Frame 488",
+            "type": "FRAME",
+            "children": [
+              {
+                "id": "I520:11606;178:1033",
+                "name": "LOGO",
+                "type": "INSTANCE",
+                "componentId": "178:1032",
+                "children": [
+                  {
+                    "id": "I520:11606;178:1033;178:1030",
+                    "name": "MM_MEDIA_Logo",
+                    "type": "RECTANGLE"
+                  }
+                ]
+              },
+              {
+                "id": "I520:11606;178:653",
+                "name": "Frame 476",
+                "type": "FRAME",
+                "children": [
+                  {
+                    "id": "I520:11606;186:1579",
+                    "name": "Button",
+                    "type": "INSTANCE",
+                    "componentId": "186:1433",
+                    "children": [
+                      {
+                        "id": "I520:11606;186:1579;186:1937",
+                        "name": "Frame 485",
+                        "type": "FRAME",
+                        "children": [
+                          {
+                            "id": "I520:11606;186:1579;186:1439",
+                            "name": "Awards Information Navigation Links",
+                            "type": "TEXT",
+                            "text": "About SAA 2025"
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "id": "I520:11606;186:1587",
+                    "name": "Button",
+                    "type": "INSTANCE",
+                    "componentId": "186:1433",
+                    "children": [
+                      {
+                        "id": "I520:11606;186:1587;186:1937",
+                        "name": "Frame 485",
+                        "type": "FRAME",
+                        "children": [
+                          {
+                            "id": "I520:11606;186:1587;186:1439",
+                            "name": "Awards Information Navigation Links",
+                            "type": "TEXT",
+                            "text": "Awards Information"
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "id": "I520:11606;186:1593",
+                    "name": "Button",
+                    "type": "INSTANCE",
+                    "componentId": "186:1501",
+                    "children": [
+                      {
+                        "id": "I520:11606;186:1593;186:2013",
+                        "name": "Frame 487",
+                        "type": "FRAME",
+                        "children": [
+                          {
+                            "id": "I520:11606;186:1593;186:1502",
+                            "name": "Awards Information Navigation Links",
+                            "type": "TEXT",
+                            "text": "Sun* Kudos"
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "id": "I520:11606;186:1601",
+            "name": "Frame 482",
+            "type": "FRAME",
+            "children": [
+              {
+                "id": "I520:11606;186:1696",
+                "name": "Language",
+                "type": "INSTANCE",
+                "componentId": "186:1692",
+                "children": [
+                  {
+                    "id": "I520:11606;186:1696;186:1821",
+                    "name": "Button",
+                    "type": "INSTANCE",
+                    "componentId": "186:1433",
+                    "children": [
+                      {
+                        "id": "I520:11606;186:1696;186:1821;186:1937",
+                        "name": "Frame 485",
+                        "type": "FRAME",
+                        "children": [
+                          {
+                            "id": "I520:11606;186:1696;186:1821;186:1709",
+                            "name": "IC",
+                            "type": "INSTANCE",
+                            "componentId": "178:1019",
+                            "children": [
+                              {
+                                "id": "I520:11606;186:1696;186:1821;186:1709;178:1010",
+                                "name": "VN - Vietnam",
+                                "type": "FRAME",
+                                "children": [
+                                  {
+                                    "id": "I520:11606;186:1696;186:1821;186:1709;178:1011",
+                                    "name": "flag",
+                                    "type": "GROUP",
+                                    "children": [
+                                      {
+                                        "id": "I520:11606;186:1696;186:1821;186:1709;178:1012",
+                                        "name": "contents",
+                                        "type": "GROUP",
+                                        "children": [
+                                          {
+                                            "id": "I520:11606;186:1696;186:1821;186:1709;178:1016",
+                                            "name": "mark",
+                                            "type": "GROUP"
+                                          }
+                                        ]
+                                      }
+                                    ]
+                                  }
+                                ]
+                              }
+                            ]
+                          },
+                          {
+                            "id": "I520:11606;186:1696;186:1821;186:1439",
+                            "name": "Awards Information Navigation Links",
+                            "type": "TEXT",
+                            "text": "VN"
+                          }
+                        ]
+                      },
+                      {
+                        "id": "I520:11606;186:1696;186:1821;186:1441",
+                        "name": "IC",
+                        "type": "INSTANCE",
+                        "componentId": "186:1862"
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "id": "I520:11606;186:2101",
+                "name": "Notification",
+                "type": "INSTANCE",
+                "componentId": "186:2098",
+                "children": [
+                  {
+                    "id": "I520:11606;186:2101;186:2020",
+                    "name": "Button",
+                    "type": "INSTANCE",
+                    "componentId": "186:1425",
+                    "children": [
+                      {
+                        "id": "I520:11606;186:2101;186:2020;186:1420",
+                        "name": "IC",
+                        "type": "INSTANCE",
+                        "componentId": "178:815"
+                      }
+                    ]
+                  },
+                  {
+                    "id": "I520:11606;186:2101;186:2089",
+                    "name": "Badge/Dot",
+                    "type": "FRAME",
+                    "children": [
+                      {
+                        "id": "I520:11606;186:2101;186:2090",
+                        "name": "dot",
+                        "type": "FRAME",
+                        "children": [
+                          {
+                            "id": "I520:11606;186:2101;186:2091",
+                            "name": "height",
+                            "type": "FRAME",
+                            "children": [
+                              {
+                                "id": "I520:11606;186:2101;186:2093",
+                                "name": "Rectangle 2",
+                                "type": "RECTANGLE"
+                              },
+                              {
+                                "id": "I520:11606;186:2101;186:2092",
+                                "name": "Rectangle 1",
+                                "type": "RECTANGLE"
+                              }
+                            ]
+                          },
+                          {
+                            "id": "I520:11606;186:2101;186:2094",
+                            "name": "width",
+                            "type": "FRAME",
+                            "children": [
+                              {
+                                "id": "I520:11606;186:2101;186:2095",
+                                "name": "Rectangle 1",
+                                "type": "RECTANGLE"
+                              },
+                              {
+                                "id": "I520:11606;186:2101;186:2096",
+                                "name": "Rectangle 2",
+                                "type": "RECTANGLE"
+                              }
+                            ]
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "id": "I520:11606;186:1597",
+                "name": "Button",
+                "type": "INSTANCE",
+                "componentId": "186:1425",
+                "children": [
+                  {
+                    "id": "I520:11606;186:1597;186:1420",
+                    "name": "IC",
+                    "type": "INSTANCE",
+                    "componentId": "186:1611"
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "520:11646",
+        "name": "Mask",
+        "type": "RECTANGLE"
+      },
+      {
+        "id": "520:11647",
+        "name": "Viết KUDO",
+        "type": "INSTANCE",
+        "componentId": "520:10673",
+        "children": [
+          {
+            "id": "I520:11647;520:9870",
+            "name": "mms_A_Gửi lời cám ơn và ghi nhận đến đồng đội",
+            "type": "TEXT",
+            "text": "Gửi lời cám ơn và ghi nhận đến đồng đội"
+          },
+          {
+            "id": "I520:11647;520:9871",
+            "name": "mms_B_Chọn người nhận",
+            "type": "FRAME",
+            "children": [
+              {
+                "id": "I520:11647;520:9873",
+                "name": "mms_B.2_Search",
+                "type": "INSTANCE",
+                "componentId": "186:2757",
+                "children": [
+                  {
+                    "id": "I520:11647;520:9873;186:2758",
+                    "name": "Frame 483",
+                    "type": "FRAME",
+                    "children": [
+                      {
+                        "id": "I520:11647;520:9873;186:2760",
+                        "name": "Awards Information Navigation Links",
+                        "type": "TEXT",
+                        "text": "Tìm kiếm"
+                      }
+                    ]
+                  },
+                  {
+                    "id": "I520:11647;520:9873;186:2761",
+                    "name": "MM_MEDIA_Down",
+                    "type": "INSTANCE",
+                    "componentId": "186:1862"
+                  }
+                ]
+              },
+              {
+                "id": "I520:11647;520:9872",
+                "name": "mms_B.1_Title",
+                "type": "INSTANCE",
+                "componentId": "416:5550",
+                "children": [
+                  {
+                    "id": "I520:11647;520:9872;416:5534",
+                    "name": "Awards Information Navigation Links",
+                    "type": "TEXT",
+                    "text": "Người nhận"
+                  },
+                  {
+                    "id": "I520:11647;520:9872;416:5547",
+                    "name": "*",
+                    "type": "TEXT",
+                    "text": "*"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "id": "I520:11647;1688:10448",
+            "name": "Frame 552",
+            "type": "FRAME",
+            "children": [
+              {
+                "id": "I520:11647;1688:10437",
+                "name": "Button",
+                "type": "INSTANCE",
+                "componentId": "186:2757",
+                "children": [
+                  {
+                    "id": "I520:11647;1688:10437;186:2758",
+                    "name": "Frame 483",
+                    "type": "FRAME",
+                    "children": [
+                      {
+                        "id": "I520:11647;1688:10437;186:2760",
+                        "name": "Awards Information Navigation Links",
+                        "type": "TEXT",
+                        "text": "Dành tặng một danh hiệu cho đồng đội"
+                      }
+                    ]
+                  },
+                  {
+                    "id": "I520:11647;1688:10437;186:2761",
+                    "name": "IC",
+                    "type": "INSTANCE",
+                    "componentId": "186:1862"
+                  }
+                ]
+              },
+              {
+                "id": "I520:11647;1688:10436",
+                "name": "Title",
+                "type": "INSTANCE",
+                "componentId": "416:5550",
+                "children": [
+                  {
+                    "id": "I520:11647;1688:10436;416:5534",
+                    "name": "Awards Information Navigation Links",
+                    "type": "TEXT",
+                    "text": "Danh hiệu"
+                  },
+                  {
+                    "id": "I520:11647;1688:10436;416:5547",
+                    "name": "*",
+                    "type": "TEXT",
+                    "text": "*"
+                  }
+                ]
+              },
+              {
+                "id": "I520:11647;1688:10447",
+                "name": "Awards Information Navigation Links",
+                "type": "TEXT",
+                "text": "Ví dụ: Người truyền động lực cho tôi.\nDanh hiệu sẽ hiển thị làm tiêu đề Kudos của bạn."
+              }
+            ]
+          },
+          {
+            "id": "I520:11647;520:9874",
+            "name": "Content",
+            "type": "FRAME",
+            "children": [
+              {
+                "id": "I520:11647;520:9875",
+                "name": "Nhập kudo",
+                "type": "FRAME",
+                "children": [
+                  {
+                    "id": "I520:11647;520:9876",
+                    "name": "Nhập nội dung",
+                    "type": "FRAME",
+                    "children": [
+                      {
+                        "id": "I520:11647;520:9877",
+                        "name": "mms_C_Chức năng",
+                        "type": "FRAME",
+                        "children": [
+                          {
+                            "id": "I520:11647;520:9881",
+                            "name": "mms_C.1_bold",
+                            "type": "INSTANCE",
+                            "componentId": "186:1425",
+                            "children": [
+                              {
+                                "id": "I520:11647;520:9881;186:1420",
+                                "name": "MM_MEDIA_Bold",
+                                "type": "INSTANCE",
+                                "componentId": "662:10957"
+                              }
+                            ]
+                          },
+                          {
+                            "id": "I520:11647;662:11119",
+                            "name": "mms_C.2_italic",
+                            "type": "INSTANCE",
+                            "componentId": "186:1425",
+                            "children": [
+                              {
+                                "id": "I520:11647;662:11119;186:1420",
+                                "name": "MM_MEDIA_Italic",
+                                "type": "INSTANCE",
+                                "componentId": "662:10945"
+                              }
+                            ]
+                          },
+                          {
+                            "id": "I520:11647;662:11213",
+                            "name": "mms_C.3_Stroke",
+                            "type": "INSTANCE",
+                            "componentId": "186:1425",
+                            "children": [
+                              {
+                                "id": "I520:11647;662:11213;186:1420",
+                                "name": "MM_MEDIA_Strikethrough",
+                                "type": "INSTANCE",
+                                "componentId": "662:10950"
+                              }
+                            ]
+                          },
+                          {
+                            "id": "I520:11647;662:10376",
+                            "name": "mms_C.4_number",
+                            "type": "INSTANCE",
+                            "componentId": "186:1425",
+                            "children": [
+                              {
+                                "id": "I520:11647;662:10376;186:1420",
+                                "name": "MM_MEDIA_Number List",
+                                "type": "INSTANCE",
+                                "componentId": "662:10338"
+                              }
+                            ]
+                          },
+                          {
+                            "id": "I520:11647;662:10507",
+                            "name": "mms_C.5_link",
+                            "type": "INSTANCE",
+                            "componentId": "186:1425",
+                            "children": [
+                              {
+                                "id": "I520:11647;662:10507;186:1420",
+                                "name": "MM_MEDIA_Link",
+                                "type": "INSTANCE",
+                                "componentId": "256:5195"
+                              }
+                            ]
+                          },
+                          {
+                            "id": "I520:11647;662:10647",
+                            "name": "mms_C.6_quote",
+                            "type": "INSTANCE",
+                            "componentId": "186:1425",
+                            "children": [
+                              {
+                                "id": "I520:11647;662:10647;186:1420",
+                                "name": "MM_MEDIA_Quote",
+                                "type": "INSTANCE",
+                                "componentId": "662:10343"
+                              }
+                            ]
+                          },
+                          {
+                            "id": "I520:11647;3053:11619",
+                            "name": "Button",
+                            "type": "FRAME",
+                            "children": [
+                              {
+                                "id": "I520:11647;3053:11621",
+                                "name": "Awards Information Navigation Links",
+                                "type": "TEXT",
+                                "text": "Tiêu chuẩn cộng đồng"
+                              }
+                            ]
+                          },
+                          {
+                            "id": "I520:11647;3053:10121",
+                            "name": "Title",
+                            "type": "INSTANCE",
+                            "componentId": "416:5550"
+                          }
+                        ]
+                      },
+                      {
+                        "id": "I520:11647;520:9886",
+                        "name": "mms_D_text filed",
+                        "type": "INSTANCE",
+                        "componentId": "186:2757",
+                        "children": [
+                          {
+                            "id": "I520:11647;520:9886;186:2758",
+                            "name": "Frame 483",
+                            "type": "FRAME",
+                            "children": [
+                              {
+                                "id": "I520:11647;520:9886;186:2760",
+                                "name": "Awards Information Navigation Links",
+                                "type": "TEXT",
+                                "text": "Hãy gửi gắm lời cám ơn và ghi nhận đến đồng đội tại đây nhé! "
+                              }
+                            ]
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "id": "I520:11647;520:9887",
+                    "name": "mms_D.1_Gợi ý",
+                    "type": "FRAME",
+                    "children": [
+                      {
+                        "id": "I520:11647;520:9888",
+                        "name": "Bạn có thể “@ + tên” để nhắc tới đồng nghiệp khác",
+                        "type": "TEXT",
+                        "text": "Bạn có thể “@ + tên” để nhắc tới đồng nghiệp khác"
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "id": "I520:11647;520:9890",
+                "name": "mms_E_Frame 536",
+                "type": "FRAME",
+                "children": [
+                  {
+                    "id": "I520:11647;520:9891",
+                    "name": "mms_E.1_Title",
+                    "type": "INSTANCE",
+                    "componentId": "416:5550",
+                    "children": [
+                      {
+                        "id": "I520:11647;520:9891;416:5534",
+                        "name": "Awards Information Navigation Links",
+                        "type": "TEXT",
+                        "text": "Hashtag"
+                      },
+                      {
+                        "id": "I520:11647;520:9891;416:5547",
+                        "name": "*",
+                        "type": "TEXT",
+                        "text": "*"
+                      }
+                    ]
+                  },
+                  {
+                    "id": "I520:11647;662:8595",
+                    "name": "mms_E.2_Tag Group",
+                    "type": "FRAME",
+                    "children": [
+                      {
+                        "id": "I520:11647;662:8910",
+                        "name": "Frame 541",
+                        "type": "FRAME",
+                        "children": [
+                          {
+                            "id": "I520:11647;662:8911",
+                            "name": "Button",
+                            "type": "INSTANCE",
+                            "componentId": "186:2757",
+                            "children": [
+                              {
+                                "id": "I520:11647;662:8911;186:2758",
+                                "name": "Frame 483",
+                                "type": "FRAME",
+                                "children": [
+                                  {
+                                    "id": "I520:11647;662:8911;186:2760",
+                                    "name": "Awards Information Navigation Links",
+                                    "type": "TEXT",
+                                    "text": "Hashtag\nTối đa 5  "
+                                  },
+                                  {
+                                    "id": "I520:11647;662:8911;186:2759",
+                                    "name": "MM_MEDIA_Plus",
+                                    "type": "INSTANCE",
+                                    "componentId": "490:5726"
+                                  }
+                                ]
+                              }
+                            ]
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "id": "I520:11647;520:9896",
+                "name": "mms_F_Frame 537",
+                "type": "FRAME",
+                "children": [
+                  {
+                    "id": "I520:11647;662:9197",
+                    "name": "mms_F.2_Image",
+                    "type": "INSTANCE",
+                    "componentId": "256:4719",
+                    "children": [
+                      {
+                        "id": "I520:11647;662:9197;662:9287",
+                        "name": "Button",
+                        "type": "INSTANCE",
+                        "componentId": "186:1425",
+                        "children": [
+                          {
+                            "id": "I520:11647;662:9197;662:9287;186:1420",
+                            "name": "MM_MEDIA_Close Tiny",
+                            "type": "INSTANCE",
+                            "componentId": "490:5771"
+                          }
+                        ]
+                      },
+                      {
+                        "id": "I520:11647;662:9197;256:4717",
+                        "name": "MM_MEDIA_Sample Image",
+                        "type": "RECTANGLE"
+                      }
+                    ]
+                  },
+                  {
+                    "id": "I520:11647;662:9393",
+                    "name": "mms_F.3_Image",
+                    "type": "INSTANCE",
+                    "componentId": "256:4719",
+                    "children": [
+                      {
+                        "id": "I520:11647;662:9393;662:9287",
+                        "name": "Button",
+                        "type": "INSTANCE",
+                        "componentId": "186:1425",
+                        "children": [
+                          {
+                            "id": "I520:11647;662:9393;662:9287;186:1420",
+                            "name": "MM_MEDIA_Close Tiny",
+                            "type": "INSTANCE",
+                            "componentId": "490:5771"
+                          }
+                        ]
+                      },
+                      {
+                        "id": "I520:11647;662:9393;256:4717",
+                        "name": "MM_MEDIA_Sample Image",
+                        "type": "RECTANGLE"
+                      }
+                    ]
+                  },
+                  {
+                    "id": "I520:11647;662:9439",
+                    "name": "mms_F.4_Image",
+                    "type": "INSTANCE",
+                    "componentId": "256:4719",
+                    "children": [
+                      {
+                        "id": "I520:11647;662:9439;662:9287",
+                        "name": "Button",
+                        "type": "INSTANCE",
+                        "componentId": "186:1425",
+                        "children": [
+                          {
+                            "id": "I520:11647;662:9439;662:9287;186:1420",
+                            "name": "MM_MEDIA_Close Tiny",
+                            "type": "INSTANCE",
+                            "componentId": "490:5771"
+                          }
+                        ]
+                      },
+                      {
+                        "id": "I520:11647;662:9439;256:4717",
+                        "name": "MM_MEDIA_Sample Image",
+                        "type": "RECTANGLE"
+                      }
+                    ]
+                  },
+                  {
+                    "id": "I520:11647;662:9495",
+                    "name": "Image",
+                    "type": "INSTANCE",
+                    "componentId": "256:4719",
+                    "children": [
+                      {
+                        "id": "I520:11647;662:9495;662:9287",
+                        "name": "Button",
+                        "type": "INSTANCE",
+                        "componentId": "186:1425",
+                        "children": [
+                          {
+                            "id": "I520:11647;662:9495;662:9287;186:1420",
+                            "name": "MM_MEDIA_Close Tiny",
+                            "type": "INSTANCE",
+                            "componentId": "490:5771"
+                          }
+                        ]
+                      },
+                      {
+                        "id": "I520:11647;662:9495;256:4717",
+                        "name": "MM_MEDIA_Sample Image",
+                        "type": "RECTANGLE"
+                      }
+                    ]
+                  },
+                  {
+                    "id": "I520:11647;662:9561",
+                    "name": "Image",
+                    "type": "INSTANCE",
+                    "componentId": "256:4719",
+                    "children": [
+                      {
+                        "id": "I520:11647;662:9561;662:9287",
+                        "name": "Button",
+                        "type": "INSTANCE",
+                        "componentId": "186:1425",
+                        "children": [
+                          {
+                            "id": "I520:11647;662:9561;662:9287;186:1420",
+                            "name": "MM_MEDIA_Close Tiny",
+                            "type": "INSTANCE",
+                            "componentId": "490:5771"
+                          }
+                        ]
+                      },
+                      {
+                        "id": "I520:11647;662:9561;256:4717",
+                        "name": "MM_MEDIA_Sample Image",
+                        "type": "RECTANGLE"
+                      }
+                    ]
+                  },
+                  {
+                    "id": "I520:11647;662:9132",
+                    "name": "mms_F.5_Frame 542",
+                    "type": "FRAME",
+                    "children": [
+                      {
+                        "id": "I520:11647;662:9133",
+                        "name": "Button",
+                        "type": "INSTANCE",
+                        "componentId": "186:2757",
+                        "children": [
+                          {
+                            "id": "I520:11647;662:9133;186:2758",
+                            "name": "Frame 483",
+                            "type": "FRAME",
+                            "children": [
+                              {
+                                "id": "I520:11647;662:9133;186:2760",
+                                "name": "Awards Information Navigation Links",
+                                "type": "TEXT",
+                                "text": "Image\nTối đa 5  "
+                              },
+                              {
+                                "id": "I520:11647;662:9133;186:2759",
+                                "name": "MM_MEDIA_Plus",
+                                "type": "INSTANCE",
+                                "componentId": "490:5726"
+                              }
+                            ]
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "id": "I520:11647;520:9897",
+                    "name": "mms_F.1_Title",
+                    "type": "INSTANCE",
+                    "componentId": "416:5550",
+                    "children": [
+                      {
+                        "id": "I520:11647;520:9897;416:5534",
+                        "name": "Awards Information Navigation Links",
+                        "type": "TEXT",
+                        "text": "Image"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "id": "I520:11647;520:14099",
+            "name": "mms_G_Gửi ẩn danh",
+            "type": "INSTANCE",
+            "componentId": "520:14092",
+            "children": [
+              {
+                "id": "I520:11647;520:14099;520:14097",
+                "name": "Check box",
+                "type": "FRAME"
+              },
+              {
+                "id": "I520:11647;520:14099;520:14095",
+                "name": "Awards Information Navigation Links",
+                "type": "TEXT",
+                "text": "Gửi lời cám ơn và ghi nhận ẩn danh"
+              }
+            ]
+          },
+          {
+            "id": "I520:11647;520:9905",
+            "name": "mms_H_Frame 538",
+            "type": "FRAME",
+            "children": [
+              {
+                "id": "I520:11647;520:9906",
+                "name": "mms_H.1_Button",
+                "type": "INSTANCE",
+                "componentId": "186:2757",
+                "children": [
+                  {
+                    "id": "I520:11647;520:9906;186:2758",
+                    "name": "Frame 483",
+                    "type": "FRAME",
+                    "children": [
+                      {
+                        "id": "I520:11647;520:9906;186:2760",
+                        "name": "Awards Information Navigation Links",
+                        "type": "TEXT",
+                        "text": "Hủy"
+                      }
+                    ]
+                  },
+                  {
+                    "id": "I520:11647;520:9906;186:2761",
+                    "name": "MM_MEDIA_Close",
+                    "type": "INSTANCE",
+                    "componentId": "214:3851"
+                  }
+                ]
+              },
+              {
+                "id": "I520:11647;520:9907",
+                "name": "mms_H.2_Button",
+                "type": "INSTANCE",
+                "componentId": "186:1567",
+                "children": [
+                  {
+                    "id": "I520:11647;520:9907;186:1935",
+                    "name": "Frame 483",
+                    "type": "FRAME",
+                    "children": [
+                      {
+                        "id": "I520:11647;520:9907;186:1568",
+                        "name": "Awards Information Navigation Links",
+                        "type": "TEXT",
+                        "text": "Gửi"
+                      }
+                    ]
+                  },
+                  {
+                    "id": "I520:11647;520:9907;186:1766",
+                    "name": "MM_MEDIA_Send",
+                    "type": "INSTANCE",
+                    "componentId": "256:5140"
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "520:11607",
+        "name": "Bìa",
+        "type": "FRAME",
+        "children": [
+          {
+            "id": "520:11608",
+            "name": "Frame 532",
+            "type": "FRAME",
+            "children": [
+              {
+                "id": "520:11609",
+                "name": "Infor",
+                "type": "FRAME",
+                "children": [
+                  {
+                    "id": "520:11610",
+                    "name": "MM_MEDIA_Avatar",
+                    "type": "ELLIPSE"
+                  },
+                  {
+                    "id": "520:11611",
+                    "name": "Frame 477",
+                    "type": "FRAME",
+                    "children": [
+                      {
+                        "id": "520:11612",
+                        "name": "Huỳnh Dương Xuân Nhật",
+                        "type": "TEXT",
+                        "text": "Huỳnh Dương Xuân Nhật"
+                      },
+                      {
+                        "id": "520:11613",
+                        "name": "Huy hiệu + Sao",
+                        "type": "FRAME",
+                        "children": [
+                          {
+                            "id": "520:11614",
+                            "name": "CEVC3",
+                            "type": "TEXT",
+                            "text": "CEVC3 "
+                          },
+                          {
+                            "id": "520:11616",
+                            "name": "Mầm non",
+                            "type": "TEXT",
+                            "text": "Mầm non"
+                          },
+                          {
+                            "id": "520:11618",
+                            "name": "Frame 479",
+                            "type": "FRAME",
+                            "children": [
+                              {
+                                "id": "520:11619",
+                                "name": "3",
+                                "type": "TEXT",
+                                "text": "3"
+                              },
+                              {
+                                "id": "520:11620",
+                                "name": "image 4",
+                                "type": "RECTANGLE"
+                              }
+                            ]
+                          },
+                          {
+                            "id": "520:11615",
+                            "name": "Ellipse 71",
+                            "type": "ELLIPSE"
+                          },
+                          {
+                            "id": "520:11617",
+                            "name": "Ellipse 70",
+                            "type": "ELLIPSE"
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "id": "520:11621",
+                    "name": "Frame 511",
+                    "type": "FRAME",
+                    "children": [
+                      {
+                        "id": "520:11622",
+                        "name": "Danh hiệu",
+                        "type": "FRAME",
+                        "children": [
+                          {
+                            "id": "520:11623",
+                            "name": "Huy hiệu",
+                            "type": "INSTANCE",
+                            "componentId": "256:4071",
+                            "children": [
+                              {
+                                "id": "I520:11623;256:4066",
+                                "name": "Huy hiệu",
+                                "type": "FRAME"
+                              },
+                              {
+                                "id": "I520:11623;256:4067",
+                                "name": "Huy hiệu",
+                                "type": "TEXT",
+                                "text": "Huy hiệu"
+                              }
+                            ]
+                          },
+                          {
+                            "id": "520:11624",
+                            "name": "Huy hiệu",
+                            "type": "INSTANCE",
+                            "componentId": "256:4071",
+                            "children": [
+                              {
+                                "id": "I520:11624;256:4066",
+                                "name": "Huy hiệu",
+                                "type": "FRAME"
+                              },
+                              {
+                                "id": "I520:11624;256:4067",
+                                "name": "Huy hiệu",
+                                "type": "TEXT",
+                                "text": "Huy hiệu"
+                              }
+                            ]
+                          },
+                          {
+                            "id": "520:11625",
+                            "name": "Huy hiệu",
+                            "type": "INSTANCE",
+                            "componentId": "256:4071",
+                            "children": [
+                              {
+                                "id": "I520:11625;256:4066",
+                                "name": "Huy hiệu",
+                                "type": "FRAME"
+                              },
+                              {
+                                "id": "I520:11625;256:4067",
+                                "name": "Huy hiệu",
+                                "type": "TEXT",
+                                "text": "Huy hiệu"
+                              }
+                            ]
+                          },
+                          {
+                            "id": "520:11626",
+                            "name": "Huy hiệu",
+                            "type": "INSTANCE",
+                            "componentId": "256:4071",
+                            "children": [
+                              {
+                                "id": "I520:11626;256:4066",
+                                "name": "Huy hiệu",
+                                "type": "FRAME"
+                              },
+                              {
+                                "id": "I520:11626;256:4067",
+                                "name": "Huy hiệu",
+                                "type": "TEXT",
+                                "text": "Huy hiệu"
+                              }
+                            ]
+                          },
+                          {
+                            "id": "520:11627",
+                            "name": "Huy hiệu",
+                            "type": "INSTANCE",
+                            "componentId": "256:4071",
+                            "children": [
+                              {
+                                "id": "I520:11627;256:4066",
+                                "name": "Huy hiệu",
+                                "type": "FRAME"
+                              },
+                              {
+                                "id": "I520:11627;256:4067",
+                                "name": "Huy hiệu",
+                                "type": "TEXT",
+                                "text": "Huy hiệu"
+                              }
+                            ]
+                          },
+                          {
+                            "id": "520:11628",
+                            "name": "Huy hiệu",
+                            "type": "INSTANCE",
+                            "componentId": "256:4071",
+                            "children": [
+                              {
+                                "id": "I520:11628;256:4066",
+                                "name": "Huy hiệu",
+                                "type": "FRAME"
+                              },
+                              {
+                                "id": "I520:11628;256:4067",
+                                "name": "Huy hiệu",
+                                "type": "TEXT",
+                                "text": "Huy hiệu"
+                              }
+                            ]
+                          },
+                          {
+                            "id": "520:11629",
+                            "name": "Huy hiệu",
+                            "type": "INSTANCE",
+                            "componentId": "256:4071",
+                            "children": [
+                              {
+                                "id": "I520:11629;256:4066",
+                                "name": "Huy hiệu",
+                                "type": "FRAME"
+                              },
+                              {
+                                "id": "I520:11629;256:4067",
+                                "name": "Huy hiệu",
+                                "type": "TEXT",
+                                "text": "Huy hiệu"
+                              }
+                            ]
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "id": "520:11630",
+                    "name": "Frame 531",
+                    "type": "FRAME",
+                    "children": [
+                      {
+                        "id": "520:11631",
+                        "name": "Button",
+                        "type": "INSTANCE",
+                        "componentId": "186:2757",
+                        "children": [
+                          {
+                            "id": "I520:11631;186:2758",
+                            "name": "Frame 483",
+                            "type": "FRAME",
+                            "children": [
+                              {
+                                "id": "I520:11631;186:2759",
+                                "name": "IC",
+                                "type": "INSTANCE",
+                                "componentId": "214:3812"
+                              },
+                              {
+                                "id": "I520:11631;186:2760",
+                                "name": "Awards Information Navigation Links",
+                                "type": "TEXT",
+                                "text": "Gửi lời cảm ơn và ghi nhận tới Huỳnh Dương Xuân Nhật"
+                              }
+                            ]
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "id": "520:11632",
+            "name": "Frame 530",
+            "type": "FRAME",
+            "children": [
+              {
+                "id": "520:11633",
+                "name": "Header Giải thưởng",
+                "type": "FRAME",
+                "children": [
+                  {
+                    "id": "520:11634",
+                    "name": "Sun* annual awards 2025",
+                    "type": "TEXT",
+                    "text": "Sun* annual awards 2025"
+                  },
+                  {
+                    "id": "520:11635",
+                    "name": "Rectangle 26",
+                    "type": "RECTANGLE"
+                  },
+                  {
+                    "id": "520:11636",
+                    "name": "Frame 488",
+                    "type": "FRAME",
+                    "children": [
+                      {
+                        "id": "520:11637",
+                        "name": "KUDOS",
+                        "type": "TEXT",
+                        "text": "KUDOS"
+                      },
+                      {
+                        "id": "520:11638",
+                        "name": "Button",
+                        "type": "INSTANCE",
+                        "componentId": "186:2757",
+                        "children": [
+                          {
+                            "id": "I520:11638;186:2758",
+                            "name": "Frame 483",
+                            "type": "FRAME",
+                            "children": [
+                              {
+                                "id": "I520:11638;186:2760",
+                                "name": "Awards Information Navigation Links",
+                                "type": "TEXT",
+                                "text": "Đã nhận"
+                              }
+                            ]
+                          },
+                          {
+                            "id": "I520:11638;186:2761",
+                            "name": "IC",
+                            "type": "INSTANCE",
+                            "componentId": "186:1862"
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "520:11603",
+        "name": "Keyvisual",
+        "type": "GROUP",
+        "children": [
+          {
+            "id": "520:11604",
+            "name": "image 1",
+            "type": "RECTANGLE"
+          }
+        ]
+      }
+    ]
+  }
+}

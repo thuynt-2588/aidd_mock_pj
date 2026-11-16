@@ -26,22 +26,32 @@ export function KudoAvatar({ name, url, size = 64 }: { name: string; url: string
   );
 }
 
-type KudoPersonProps = { person: KudoPerson; heroHover: KudosMessages["heroHover"] };
+type KudoPersonProps = { person: KudoPerson; heroHover: KudosMessages["heroHover"]; anonymousLabel: string };
 
 // B.3.1/B.3.2 · C.3.1/C.3.3: avatar, name, department · hero badge (no stars:
 // not in the Figma frame). Avatar and name open the profile (page not built yet).
-export function KudoPersonInfo({ person, heroHover }: KudoPersonProps) {
-  const badge = heroBadge(person.distinctSenders);
-  const href = profilePath(person.id);
+// Anonymous sender ("Viết Kudo" G): alias (or "Ẩn danh"), no link, no badge.
+export function KudoPersonInfo({ person, heroHover, anonymousLabel }: KudoPersonProps) {
+  const name = person.name || anonymousLabel;
+  const badge = person.id ? heroBadge(person.distinctSenders) : null;
+  const href = person.id ? profilePath(person.id) : null;
   return (
     <div className="flex w-[235px] min-w-0 flex-col items-center gap-[13px]">
-      <Link href={href} aria-label={person.name} className="rounded-full focus-visible:outline-2 focus-visible:outline-saa-accent">
-        <KudoAvatar name={person.name} url={person.avatarUrl} />
-      </Link>
-      <div className="flex w-full flex-col items-center gap-0.5">
-        <Link href={href} className="max-w-full truncate text-base font-bold leading-6 tracking-[0.15px] text-saa-bg hover:underline">
-          {person.name}
+      {href ? (
+        <Link href={href} aria-label={name} className="rounded-full focus-visible:outline-2 focus-visible:outline-saa-accent">
+          <KudoAvatar name={name} url={person.avatarUrl} />
         </Link>
+      ) : (
+        <KudoAvatar name={name} url={person.avatarUrl} />
+      )}
+      <div className="flex w-full flex-col items-center gap-0.5">
+        {href ? (
+          <Link href={href} className="max-w-full truncate text-base font-bold leading-6 tracking-[0.15px] text-saa-bg hover:underline">
+            {name}
+          </Link>
+        ) : (
+          <span className="max-w-full truncate text-base font-bold leading-6 tracking-[0.15px] text-saa-bg">{name}</span>
+        )}
         <div className="flex items-center justify-center gap-2.5">
           {person.department && (
             <span className="text-sm font-bold leading-5 tracking-[0.1px] text-saa-muted">{person.department}</span>

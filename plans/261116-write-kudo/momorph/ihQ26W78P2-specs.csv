@@ -1,0 +1,181 @@
+﻿No,Item Name,UI Parts,Item Type,Description,Trigger,Destination,Interaction Note,Data Type,Required,Format,Max Length,Min Length,Default Value,Validation Note,Table Name,Column Name,Database Note,Active status,Item ID
+A,Gửi lời cám ơn và ghi nhận đến đồng đội,I520:11647;520:9870,label,"Tiêu đề modal 'Gửi lời cám ơn và ghi nhận đến đồng đội'.
+
+Function:
+- Hiển thị: Văn bản tiêu đề ở đầu modal, lớn và canh giữa, không tương tác.",,,,,Optional,,,,,,,,,active,8899063c-d9e6-4739-8d6c-fe11588202b3
+B,Recipient Selector,I520:11647;520:9871,form_field,"Section to select the Kudo recipient.
+
+Display:
+  - Title: 'Người nhận' with required asterisk (*) - bold 22px
+  - Search input: text field with placeholder 'Tìm kiếm' and dropdown arrow icon
+  - Input style: white border (#998C5F), 8px border-radius, 56px height
+  - Layout: title (left) + search input (right, flex-grow)
+
+Function:
+- Click search input: open dropdown/autocomplete list of Sunners
+- Type to search: filter list by name
+- Select user: populate field with selected user's name/avatar
+- Required field: form cannot submit without a recipient
+- Validation: must select a valid existing Sunner",,,,,,,,,,,,,,active,78c973cc-b60f-4e9e-a571-2c01d89e4ff6
+B.1,Title,I520:11647;520:9872,label,"Nhãn cho 'Người nhận' (bắt buộc).
+Hiển thị: '*', 'Người nhận'.
+Chức năng: chỉ ra trường required.",,,,,Optional,,,,,,,,,active,391f5b7b-e081-467f-9a74-95c74c377e6d
+B.2,search,I520:11647;520:9873,text_form,"Trường tìm và chọn 'Người nhận' trong form kudo.
+
+Display:
+  - Input box: Text field với placeholder 'Tìm kiếm' (514x56px)
+  - Icon: Dropdown/IC ở bên phải để mở danh sách chọn
+
+Function:
+- Input: Gợi ý/lọc kết quả theo ký tự (autocomplete)
+- Select: Click một mục để điền người nhận
+- Error: Khi rỗng hiển thị viền đỏ và thông báo",,,,string,Required,,,,,"Trường bắt buộc
+Chọn người nhận từ danh sách (autocomplete)
+Tối thiểu 1 ký tự",,,,active,3af97454-db39-4b43-9501-561a29fca73c
+C,Chức năng,I520:11647;520:9877,text_form,"Các chức năng hỗ trợ format text trong phần nhập liệu, bao gồm Bold, Italic, Stroke, Number, Link, Quote",,,,string,Required,,,,,,,,,active,5f02044c-dbdd-446b-aa88-06dd9d17ab71
+C.1,bold,I520:11647;520:9881,button,"Nút 'B' bật/tắt in đậm trong ô soạn thảo.
+
+Function:
+- Click: Áp dụng hoặc loại bỏ định dạng in đậm cho văn bản được chọn hoặc cho nội dung mới",,,,,Optional,,,,,,,,,active,2c3ac2c3-3fea-416e-aba9-0cf7689b7022
+C.2,italic,I520:11647;662:11119,button,"Nút 'I' bật/tắt in nghiêng trong ô soạn thảo.
+
+Function:
+- Click: Áp dụng hoặc loại bỏ định dạng in nghiêng cho văn bản được chọn hoặc cho nội dung mới",,,,,Optional,,,,,,,,,active,e252b7c2-2cc6-435e-8603-0a2a7e5e65c0
+C.3,Stroke,I520:11647;662:11213,decorative,"Nút 'S' bật/tắt gạch ngang trong ô soạn thảo.
+
+Function:
+- Click: Áp dụng hoặc loại bỏ định dạng gạch ngang cho văn bản được chọn hoặc cho nội dung mới",,,,,Optional,,,,,,,,,active,96f15180-78f4-48da-8164-a84ab6d23886
+C.4,number,I520:11647;662:10376,button,"Nút bật/tắt đánh số trong ô soạn thảo.
+
+Function:
+- Click: Áp dụng hoặc loại bỏ định dạng đánh số cho văn bản được chọn hoặc cho nội dung mới",,,,,Optional,,,,,,,,,active,60a39255-df95-4f64-bbda-23e4223797ea
+C.5,link,I520:11647;662:10507,button,"Biểu tượng trong thanh công cụ soạn thảo dùng để chèn hoặc chỉnh sửa liên kết.
+
+Function:
+- Click: Mở hộp thoại nhập URL và tùy chọn mở trong tab mới, sau đó chèn liên kết vào vùng văn bản",,,,,Optional,,,,,,,,,active,81423505-5499-47f3-a0e3-c8118e664e8c
+C.6,quote,I520:11647;662:10647,button,"Nút chèn trích dẫn cho editor.
+
+Function:
+- Click: Bật/tắt định dạng trích dẫn cho đoạn chọn",,,,,Optional,,,,,,,,,active,55290cf5-aef4-4ad2-a366-a928875b02f1
+D,text filed,I520:11647;520:9886,text_form,"Trường textarea để nhập lời cảm ơn trong modal.
+
+Display:
+  - Toolbar: nút định dạng (B, I, link, quote, list)
+  - Textarea: placeholder 'Hãy gửi gắm lời cám ơn và ghi nhận đến đồng đội tại đây nhé!'
+
+Function:
+- Lưu nội dung lời cảm ơn
+- '@'+tên: gợi ý để nhắc đồng nghiệp",,,,string,Required,,,,,"Cho phép '@' + tên để nhắc đồng nghiệp
+Bắt buộc",,,,active,a78c2d1f-f5c2-43a6-9814-c27493230ff4
+D.1,Gợi ý và bộ đếm ký tự,I520:11647;520:9887,label,"Hiển thị hướng dẫn và bộ đếm ký tự dưới ô soạn thảo.
+
+Display:
+  - Gợi ý: Text nhỏ - 'Bạn có thể “@ + tên” để nhắc tới đồng nghiệp khác'
+
+Function:
+- Hiển thị: Luôn hiển thị dưới textarea",,,,,Optional,,,,,,,,,active,e7e71adb-9090-4796-801c-0a9b30a953ad
+E,Frame 536,I520:11647;520:9890,text_form,"Trường chọn 'Hashtag' bắt buộc.
+
+Display:
+  - Label: 'Hashtag' (*)
+  - Button: '+ Hashtag'
+  - Note: 'Tối đa 5'
+  - Chips: hashtag đã thêm
+
+Function:
+- Click '+ Hashtag': mở dropdown để thêm
+- Nhập: tạo chip
+- Click 'x' trên chip: xóa
+- Validation: tối đa 5, không được để trống",,,,string,Required,,,,,"Tối thiểu 1 tag. Tối đa 5 hashtag
+Trường bắt buộc",,,,active,23c52be6-2ea0-4b1b-b972-b39f99434368
+E.1,Title,I520:11647;520:9891,label,"Nhãn cho trường 'Hashtag' kèm dấu '*' báo trường bắt buộc.
+
+Function:
+- Hiển thị: văn bản 'Hashtag' và '*'
+- Tương tác: không có, chỉ để nhận diện trường bắt buộc",,,,,Optional,,,,,,,,,active,c55636cc-e187-4224-b8e1-70f1dc70b52e
+E.2,Tag Group,I520:11647;662:8595,tag_group,"Trường chọn 'Hashtag' bắt buộc.
+
+Display:
+  - Label: 'Hashtag' (*)
+  - Button: '+ Hashtag'
+  - Note: 'Tối đa 5'
+  - Chips: hashtag đã thêm
+
+Function:
+- Click '+ Hashtag': mở dropdown để thêm
+- Nhập: tạo chip
+- Click 'x' trên chip: xóa
+- Validation: tối đa 5, không được để trống",,,,,Required,,,,,"Tối đa 5 hashtag
+Trường bắt buộc",,,,active,b806be1c-ca21-46cc-a87d-33c748f5555f
+F,Frame 537,I520:11647;520:9896,image_upload,"Khung để thêm và quản lý ảnh đính kèm.
+
+Display:
+  - Nhãn: 'Image'
+  - Hình thu nhỏ: dãy ảnh kèm nút 'x' để xóa từng ảnh
+  - Nút: '+ Image' và text 'Tối đa 5'
+
+Function:
+- Click '+ Image': mở file picker để chọn ảnh
+- Click 'x' trên thumbnail: xóa ảnh khỏi danh sách
+- Thêm được tối đa 5 ảnh, đủ 5 ảnh ẩn button '+ Image'
+- Trường không bắt buộc",,,,,Optional,,,,,Tối đa 5 ảnh,,,,active,bc815287-b632-4f54-83ec-df491840aced
+F.1,Title,I520:11647;520:9897,label,"Nhãn tiêu đề cho phần đính kèm ảnh 'Image'.
+Function:
+- Display: Hiển thị chữ 'Image' phía trên danh sách ảnh
+- click: Không interactive, chỉ là nhãn",,,,,Optional,,,,,,,,,active,b21e0a71-7b9c-4d63-850d-a069c0f05fd1
+F.2,Image,I520:11647;662:9197,image_thumbnail,"Khung để thêm và quản lý ảnh đính kèm.
+
+Display:
+  - Hình thu nhỏ: ảnh kèm nút 'x' để xóa từng ảnh
+
+Function:
+- Click 'x' trên thumbnail: xóa ảnh khỏi danh sách",,,,,Optional,,,,,,,,,active,0473cef2-1899-4702-9cbc-b815749794c5
+F.3,Image,I520:11647;662:9393,image_item,"Khung để thêm và quản lý ảnh đính kèm.
+
+Display:
+  - Hình thu nhỏ: ảnh kèm nút 'x' để xóa từng ảnh
+
+Function:
+- Click 'x' trên thumbnail: xóa ảnh khỏi danh sách",,,,,Optional,,,,,,,,,active,ae5cb13b-7b28-433d-8d14-6bb6173a7b05
+F.4,Image,I520:11647;662:9439,image_thumbnail,"Khung để thêm và quản lý ảnh đính kèm.
+
+Display:
+  - Hình thu nhỏ: ảnh kèm nút 'x' để xóa từng ảnh
+
+Function:
+- Click 'x' trên thumbnail: xóa ảnh khỏi danh sách",,,,,Optional,,,,,,,,,active,e6d179d8-fe94-4cab-9c67-b1f74a12360b
+F.5,Frame 542,I520:11647;662:9132,button,"Nút thêm ảnh cho bài 'Kudos'.
+
+Display:
+  - Icon: biểu tượng nhỏ (IC)
+  - Label: 'Image'
+  - Ghi chú: 'Tối đa 5'
+
+Function:
+- Click: mở file picker để chọn ảnh
+- Nếu đã 5 ảnh: ẩn
+- Sau chọn: hiển thị thumbnail bên cạnh",,,,,Optional,,,,,,,,,active,c580f2a2-6a83-415f-9941-ad7bfdcc49d2
+G,Gửi ẩn danh,I520:11647;520:14099,text_form,"Cho phép người gửi chọn ẩn danh; nhãn hiển thị 'Gửi lời cám ơn và ghi nhận ẩn danh'.
+
+Function:
+- Click: Bật/tắt ẩn danh trước khi gửi
+- Bật: Hiển thị text field điền tên ẩn danh",,,,boolean,Optional,,,,,,,,,active,5ee66ee7-afff-4d96-a9ba-5d9c4e40fea5
+H,Frame 538,I520:11647;520:9905,button,"Footer modal chứa hai nút hành động 'Hủy' và 'Gửi'.
+Display:
+  - 'Hủy': nút text + icon
+  - 'Gửi': nút icon_text, nền vàng (nút chính)
+Function:
+  - Click 'Hủy': đóng modal, huỷ thay đổi
+  - Click 'Gửi': validate form và gửi dữ liệu, show loading, đóng modal khi thành công
+State:
+  - 'Gửi' disabled nếu các trường bắt buộc chưa được điền",,,,,Optional,,,,,,,,,active,0795564b-0d55-43e7-96f9-4ae0a452ce25
+H.1,Nút Hủy,I520:11647;520:9906,button,"Nút 'Hủy' để đóng modal và hủy thao tác viết 'Kudo'.
+Function:
+- Click: Đóng modal và bỏ mọi thay đổi, không gửi dữ liệu
+- State: luôn enabled khi hiển thị",,,,,Optional,,,,,,,,,active,eb8321b8-d6fc-4305-98e0-840f49107e8c
+H.2,Button,I520:11647;520:9907,button,"Button chính 'Gửi' để gửi lời cảm ơn từ form.
+
+Function:
+- Click: Gửi nội dung và đóng dialog
+- Disable khi các trường bắt buộc (Người nhận, nội dung, hashtag) chưa điền đủ",,,,,Optional,,,,,,,,,active,6fda2fe3-0a08-49a2-a69e-a1ab7859be57
+

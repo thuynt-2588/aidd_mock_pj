@@ -16,6 +16,19 @@ type KudosFeedProps = { initial: KudoView[]; viewerId: string; filters: KudosFil
 export function KudosFeed({ initial, viewerId, filters, t }: KudosFeedProps) {
   const [items, setItems] = useState(initial);
   const [done, setDone] = useState(initial.length < FEED_PAGE_SIZE);
+  // After the board re-renders on the server (e.g. a kudos was just sent from
+  // "Viết Kudo"), put the new first-page kudos on top and refresh the ones
+  // already shown; pages loaded with "Xem thêm" stay.
+  const [seenInitial, setSeenInitial] = useState(initial);
+  if (initial !== seenInitial) {
+    setSeenInitial(initial);
+    setItems((prev) => {
+      const fresh = new Map(initial.map((k) => [k.id, k]));
+      const kept = prev.map((k) => fresh.get(k.id) ?? k);
+      const shown = new Set(prev.map((k) => k.id));
+      return [...initial.filter((k) => !shown.has(k.id)), ...kept];
+    });
+  }
   const [loading, startLoading] = useTransition();
 
   const loadMore = () =>

@@ -133,3 +133,9 @@ Icons are applied as CSS masks over `currentColor` (several exports are hard-cod
 
 - RED: campaign test — gap between the end of the label TEXT (Range rect) and the icon ≤ 8px, value flush right → received 48.8px. (A first version measured the stretched label box and passed wrongly; fixed to measure the text.)
 - GREEN: `StatRow` = [label + badge, gap 4px, flex-1] [value right] → full E2E 55 passed / 7 skipped; tsc + eslint clean.
+
+### All Kudos "Xem thêm" + sidebar without its own scroll (user request)
+
+- User choice: 5 cards + "Xem thêm" button (no infinite scroll).
+- RED: `sun-kudos.spec.ts` — 5 cards, no auto-load on scroll, "Xem thêm" → 10 (received 10 at first load); sidebar overflow-y not auto/scroll, nothing cut off, gift list overflow-y auto (received aside "auto").
+- GREEN: `FEED_PAGE_SIZE = 5`; `KudosFeed` button (`useTransition`, "Đang tải…" while loading) instead of IntersectionObserver; aside without `overflow-y-auto`, stats `shrink-0`, gift section/list `min-h-0` so only the list scrolls. Badge tier tests now press "Xem thêm" until the tier shows. Full E2E 56 passed / 7 skipped; Vitest 81/81; tsc + eslint clean.

@@ -73,12 +73,13 @@ function SpecialDayBadge({ day, t }: { day: string; t: KudosMessages }) {
   );
 }
 
-// D: 422 wide, sticky with its own scroll. D.1 stats + "Mở Secret Box";
-// D.3 the 10 latest Sunners who received a gift.
+// D: 422 wide, sticky. D.1 stats + "Mở Secret Box"; D.3 the 10 latest
+// Sunners who received a gift. The sidebar has no scroll of its own: it fits
+// the viewport and only the D.3 list scrolls (and shrinks to fit).
 export function KudosSidebar({ stats, gifts, specialDay, t }: KudosSidebarProps) {
   return (
-    <aside className="flex w-full flex-col gap-6 xl:sticky xl:top-24 xl:max-h-[calc(100vh-112px)] xl:w-[422px] xl:shrink-0 xl:overflow-y-auto">
-      <section className={`${BOX} gap-4 p-6`}>
+    <aside className="flex w-full flex-col gap-6 xl:sticky xl:top-24 xl:max-h-[calc(100vh-112px)] xl:w-[422px] xl:shrink-0">
+      <section className={`${BOX} shrink-0 gap-4 p-6`}>
         <StatRow label={t.stats.received} value={stats.kudosReceived} />
         <StatRow label={t.stats.sent} value={stats.kudosSent} />
         <StatRow
@@ -101,13 +102,13 @@ export function KudosSidebar({ stats, gifts, specialDay, t }: KudosSidebarProps)
         </button>
       </section>
 
-      <section className={`${BOX} gap-4 py-6 pl-6 pr-4`}>
+      <section className={`${BOX} min-h-0 gap-4 py-6 pl-6 pr-4`}>
         <h3 className="whitespace-pre-line text-center text-[22px] font-bold leading-7 text-saa-accent">{t.giftTitle}</h3>
         {gifts.length === 0 ? (
           <p className="text-center text-base font-bold text-saa-muted">{t.noData}</p>
         ) : (
           // Frame 545: 2px #999 scrollbar with 8px radius.
-          <ul className="kudos-scrollbar flex max-h-[384px] flex-col gap-4 overflow-y-auto pr-2">
+          <ul className="kudos-scrollbar flex max-h-[384px] min-h-0 flex-col gap-4 overflow-y-auto pr-2">
             {gifts.map((g) => (
               <li key={g.id} data-testid="gift-recipient" className="flex items-center gap-2">
                 <Link href={profilePath(g.profileId)} aria-label={g.name} className="rounded-full">

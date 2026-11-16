@@ -16,5 +16,5 @@ Everything else below is an agent default — change on request.
 | 8 | D lists | Only "10 SUNNER NHẬN QUÀ MỚI NHẤT" (in Figma and in the agreed scope); "10 Sunner có sự thăng hạng mới nhất" is not in the Figma frame. |
 | 9 | Spotlight | Word cloud of receivers (size by kudos count, Figma 6.7–11.3px), hover = name + time of latest kudos, click = latest kudos detail, Pan/Zoom toggle (drag + wheel), search highlights + centres the first match (diacritics-insensitive, max 100 chars), live feed of the 5 latest kudos. Total = all kudos in DB. |
 | 10 | Assets | No Figma exports needed: keyvisual reuses `public/awards/keyvisual-2025.jpg`, KUDOS logo `public/home/kudos-logo.png`, icons are inline SVG, badge artwork replaced by a styled pill, avatars = Google picture or initials. Seed attachments reuse `public/home/award-*.png`. |
-| 11 | Pagination | Highlight: 5 cards, arrows disabled at the ends, pager resets to 1 on filter change. All Kudos: 10 per page, infinite scroll. |
+| 11 | Pagination | Highlight: 5 cards, arrows disabled at the ends, pager resets to 1 on filter change. All Kudos: 5 cards, then a "Xem thêm" button loads 5 more (no infinite scroll; user 2026-11-16, to keep the page short). |
 | 12 | Playwright | `workers: 3` — 6 parallel workers overloaded `next dev` (timeouts); 3 is stable. |

@@ -5,7 +5,7 @@ import { signInAsNewTestUser } from "./support/create-test-session";
 // Needs the local Supabase with supabase/seed.sql loaded (60 kudos).
 
 const KUDOS = "/sun-kudos";
-const PAGE_SIZE = 10;
+const PAGE_SIZE = 5;
 
 const highlightCards = (page: Page) => page.getByTestId("highlight-card");
 const pager = (page: Page) => page.getByTestId("highlight-pager");
@@ -62,14 +62,30 @@ test.describe("signed in", () => {
     await expect(next).toBeDisabled();
   });
 
-  test("C: All Kudos loads more cards on scroll (infinite scroll)", async ({ page }) => {
+  test("C: All Kudos shows 5 cards; 'Xem thêm' loads 5 more (no auto-load on scroll)", async ({ page }) => {
     await page.goto(KUDOS);
     await expect(feedCards(page)).toHaveCount(PAGE_SIZE);
-    // Re-scroll until the next page is in (the observer attaches on hydration).
-    await expect(async () => {
-      await page.getByTestId("kudos-feed-end").scrollIntoViewIfNeeded();
-      expect(await feedCards(page).count()).toBeGreaterThan(PAGE_SIZE);
-    }).toPass({ timeout: 20_000 });
+    const more = page.getByRole("button", { name: "Xem thêm" });
+    await more.scrollIntoViewIfNeeded();
+    await page.mouse.wheel(0, 2000);
+    await page.waitForTimeout(1500);
+    await expect(feedCards(page)).toHaveCount(PAGE_SIZE);
+
+    await expect(more).toBeEnabled();
+    await more.click();
+    await expect(feedCards(page)).toHaveCount(PAGE_SIZE * 2, NAVIGATION);
+  });
+
+  test("D: the sidebar has no scroll of its own; only the gift list scrolls", async ({ page }) => {
+    await page.setViewportSize({ width: 1440, height: 900 });
+    await page.goto(KUDOS);
+    const aside = page.getByRole("complementary");
+    const overflowY = (el: Element) => getComputedStyle(el).overflowY;
+    expect(["auto", "scroll"]).not.toContain(await aside.evaluate(overflowY));
+    // Nothing in the sidebar is cut off.
+    expect(await aside.evaluate((el) => el.scrollHeight <= el.clientHeight + 1)).toBe(true);
+    const list = page.getByTestId("gift-recipient").first().locator("..");
+    expect(await list.evaluate(overflowY)).toBe("auto");
   });
 
   test("C.4.1: heart toggles the count and the active state", async ({ page }) => {

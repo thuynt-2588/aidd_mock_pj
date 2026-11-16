@@ -33,6 +33,7 @@ export interface KudosMessages {
   empty: string;
   noData: string;
   loading: string;
+  seeMore: string;
   attachmentAlt: string;
   spotlightKudos: string;
   spotlightSearch: string;
@@ -88,6 +89,7 @@ const vi: KudosMessages = {
   empty: "Hiện tại chưa có Kudos nào.",
   noData: "Chưa có dữ liệu",
   loading: "Đang tải…",
+  seeMore: "Xem thêm",
   attachmentAlt: "Ảnh đính kèm",
   spotlightKudos: "KUDOS",
   spotlightSearch: "Tìm kiếm",
@@ -142,6 +144,7 @@ const en: KudosMessages = {
   empty: "There are no kudos yet.",
   noData: "No data yet",
   loading: "Loading…",
+  seeMore: "See more",
   attachmentAlt: "Attached image",
   spotlightSearch: "Search",
   spotlightReceived: "received a new kudos",

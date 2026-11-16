@@ -50,4 +50,4 @@ export type SpotlightData = {
 export type FilterOptions = { hashtags: string[]; departments: string[] };
 
 export const HIGHLIGHT_COUNT = 5;
-export const FEED_PAGE_SIZE = 10;
+export const FEED_PAGE_SIZE = 5;

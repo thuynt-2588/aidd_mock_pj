@@ -19,6 +19,18 @@ async function open(page: Page) {
   await expect(page.getByTestId("kudo-card").first()).toBeVisible();
 }
 
+/** A badge of this tier on an All Kudos card, pressing "Xem thêm" (5 at a time) until one shows. */
+async function feedBadge(page: Page, name: string) {
+  const badge = page.getByTestId("kudo-card").locator(`[data-testid="hero-badge"][alt="${name}"]`).first();
+  const more = page.getByRole("button", { name: "Xem thêm" });
+  for (let i = 0; i < 10 && (await badge.count()) === 0 && (await more.count()) > 0; i++) {
+    const before = await page.getByTestId("kudo-card").count();
+    await more.click();
+    await expect(page.getByTestId("kudo-card")).not.toHaveCount(before, { timeout: 15_000 });
+  }
+  return badge;
+}
+
 test.describe("hero badges", () => {
   test.beforeEach(async ({ context, page }) => {
     await signInAsNewTestUser(context);
@@ -52,7 +64,7 @@ test.describe("hero badges", () => {
   test("seed shows every tier: Super and Legend badges with their hovers", async ({ page }) => {
     for (const name of ["Super Hero", "Legend Hero"]) {
       // All Kudos cards (side cards of the highlight carousel are inert).
-      const badge = page.getByTestId("kudo-card").locator(`[data-testid="hero-badge"][alt="${name}"]`).first();
+      const badge = await feedBadge(page, name);
       await badge.scrollIntoViewIfNeeded();
       await badge.hover();
       // The hover card next to this badge (pill → focusable span → wrapper).
@@ -64,7 +76,7 @@ test.describe("hero badges", () => {
 
   test("each tier shows its own exported badge image", async ({ page }) => {
     for (const [name, file] of [["New Hero", "new"], ["Rising Hero", "rising"], ["Super Hero", "super"], ["Legend Hero", "legend"]]) {
-      const badge = page.locator(`[data-testid="hero-badge"][alt="${name}"]`).first();
+      const badge = await feedBadge(page, name);
       await expect(badge).toHaveAttribute("src", new RegExp(`badge-${file}-hero\\.png`));
     }
   });

@@ -1,0 +1,460 @@
+﻿No,Item Name,UI Parts,Item Type,Description,Trigger,Destination,Interaction Note,Data Type,Required,Format,Max Length,Min Length,Default Value,Validation Note,Table Name,Column Name,Database Note,Active status,Item ID
+A,KV Kudos,2940:13437,hero,"Banner đầu trang: tiêu đề 'Hệ thống ghi nhận lời cảm ơn', bên dưới là logo SAA 2025 KUDOS
+
+Display:
+
+- Tiêu đề: text lớn, nổi bật
+- Nền: đồ họa trang trí
+
+Function:
+
+- Readonly",,,,,Optional,,,,,,,,,active,34d36fb2-4213-443d-b1e3-a8ed75cfa4d0
+A.1,Button ghi nhận,2940:13449,text_form,"Thanh nhập để mở dialog nhập lời cảm ơn. Tất cả những lời cảm ơn hay còn gọi là kudos sau khi gửi hệ thống sẽ được lưu trữ lại trong database.
+
+Display:
+  - Ô nhập: text field (kiểu pill) với placeholder 'Hôm nay, bạn muốn gửi lời cảm ơn và ghi nhận đến ai?'
+  - Icon: biểu tượng bút ở bên trái
+
+Function:
+- Click: Mở dialog gửi lời cảm ơn",,,,string,Required,,,,,,,,,active,25985226-921b-400a-a8d2-80a434220448
+B,Highlight,2940:13451,carousel,"Khu vực hiển thị các kudos nổi bật trong sự kiện. Đây là TOP những kudos có nhiều lượt thả tim nhất xuyên suốt sự kiện.
+
+Display:
+  - Header: Văn bản - 'Sun* Annual Awards 2025' và 'HIGHLIGHT KUDOS'
+  - Filters: Buttons - 'Hashtag', 'Phòng ban'
+  - Carousel: card gồm thông tin người gửi, thông tin người nhận, thời gian đăng tải, nội dung lời cảm ơn, danh sách hashtag, số tim, button copy link và Xem chi tiết
+  - Navigation: Mũi tên trái/phải và pagination '2/5'
+
+Function:
+- Click mũi tên: chuyển slide tiếp/ trước
+- Click 'Xem chi tiết': mở trang chi tiết kudos
+- Click heart: thay đổi tăng giảm số tim và đổi trạng thái active
+- Click 'Copy Link': sao chép link và hiển thị toast 'Link copied — ready to share!'
+- Click filter: lọc danh sách (cả phần Highlight Kudos và All Kudos), cập nhật carousel và đặt pagination về 1
+
+State:
+- Slide hiện tại hiển thị nổi bật ở center, 2 bên để mờ; mũi tên disabled ở hai đầu khi không còn slide",,,,,Optional,,,,,,kudos,,,active,dcaa5e2b-86b7-46d7-8bc6-5aa12c33e316
+B.1,header,2940:13452,section_header,"Tiêu đề phần hiển thị 'HIGHLIGHT KUDOS' kèm subtitle và bộ lọc.
+
+Display:
+  - Subtitle: 'Sun* Annual Awards 2025' - văn bản nhỏ
+  - Title: 'HIGHLIGHT KUDOS' - chữ lớn, nổi bật
+  - Bộ lọc: hai dropdown 'Hashtag', 'Phòng ban' - nút mở menu
+
+Function:
+- Phần title và subtitle: readonly
+- Click dropdown: mở menu lựa chọn
+- Chọn lọc: lọc nội dung tương ứng (cả phần highlight kudos và all kudos)
+- State: dropdown hiển thị trạng thái active option khi đã chọn",,,,,Optional,,,,,,,,,active,24637a2d-deda-468e-81fc-5a293eb9014e
+B.1.1,ButtonHashtag,2940:13459,button,"Nút mở menu 'Hashtag' để chọn tag, dùng để lọc nội dung. Danh sách hashtag được truy vấn từ cơ sở dữ liệu.
+
+Function:
+- Click: Mở dropdown
+- Select: Chọn tag để lọc các kudos theo hashtag",on_click,Dropdown list hashtag,,,Optional,,,,,,,,,active,c8759659-d9f2-481b-8f06-4b15c068a1f8
+B.1.2,Button Phong ban,2940:13460,button,"Nút mở menu 'Phòng ban' để chọn tag, dùng để lọc nội dung. Danh sách phòng ban sẽ được truy vấn từ cơ sở dữ liệu.
+
+Function:
+- Click: Mở dropdown
+- Select: Chọn Phòng ban để lọc",on_click,Dropdown Phòng ban,,,Optional,,,,,,,,,active,b329f3cd-6c49-4f1c-9be8-69d3ff901ce4
+B.2,HIGHLIGHT KUDOS,2940:13461,carousel,"Carousel 'HIGHLIGHT KUDOS' hiển thị 5 card kudos có nhiều tim nhất
+
+Display:
+
+- Carousel: card gồm thông tin người gửi, thông tin người nhận, thời gian đăng tải, nội dung lời cảm ơn, danh sách hashtag, số tim, button copy link và Xem chi tiết
+
+Function:
+
+- Click mũi tên: chuyển slide tiếp/ trước
+- Click 'Xem chi tiết': mở trang chi tiết kudos
+- Click heart: thay đổi tăng giảm số và đổi trạng thái active.
+- Click 'Copy Link': sao chép link và hiển thị toast 'Link copied — ready to share!'
+State:
+- Slide hiện tại hiển thị nổi bật ở center, 2 bên để mờ; mũi tên disabled ở hai đầu khi không còn slide",,,,,Optional,,,,,,,,,active,7d9ea77f-7eb3-4fc4-a0f8-2dbbbd87a2e1
+B.2.1,Button tiến,2940:13470,button,"Nút 'lùi' tròn (icon chevron-right) để điều hướng carousel Highlight Kudos.
+
+Function:
+- Click: Chuyển carousel sang card trước đó
+- Trường hợp đang ở page 1 (card đầu tiên) thì disable nút này",,,,,Optional,,,,,,,,,active,bbd1d264-7d1a-4888-969a-0b2169e8073f
+B.2.2,Nút lùi,2940:13468,button,"Nút điều hướng tiến trong khu vực 'HIGHLIGHT KUDOS'.
+
+Function:
+- Click: Trượt carousel sang item tiếp theo
+- Trường hợp ở trang 5 (card thứ 5) thì disable nút này",,,,,Optional,,,,,,,,,active,bfeb634c-741b-4cb7-842b-023af3db6d55
+B.2.3,content HIghlight KUDO,2940:13463,carousel,"Carousel 'HIGHLIGHT KUDOS' hiển thị 5 card kudos có nhiều tim nhất trong suốt sự kiện.
+
+Display:
+  - Carousel: card gồm thông tin người gửi, thông tin người nhận, thời gian đăng tải, nội dung lời cảm ơn, danh sách hashtag, số tim, button copy link và Xem chi tiết
+
+Function:
+- Click mũi tên: chuyển slide tiếp/ trước
+- Click 'Xem chi tiết': mở trang chi tiết kudos
+- Click heart: tăng số và đổi trạng thái active
+- Click 'Copy Link': sao chép link và hiển thị toast 'Link copied — ready to share!'
+State:
+- Slide hiện tại hiển thị nổi bật ở center, 2 bên để mờ; mũi tên disabled ở hai đầu khi không còn slide",,,,,Optional,,,,,,kudos,,,active,f17ebf18-da6b-496b-bbfe-8fcac26e5f76
+B.3,KUDO - Highlight,2940:13465,card,"Thẻ KUDO hiển thị bài khen thưởng nổi bật trong carousel.
+
+Display:
+  - Thông tin người gửi, thông tin người nhận: bao gồm avatar gmail, họ và tên, số hoa thị, danh hiệu
+  - Thời gian đăng tải lời cảm ơn: '10:00 - 10/30/2025'
+  - Nội dung: Lời cảm ơn, hiển thị tối đa 3 dòng. Nếu quá 3 dòng hiển thị ""...""
+  - Tags: danh sách hashtag (ví dụ '#Dedicated'), tối đa 5 hashtag hiển thị trên 1 dòng, nếu quá 1 dòng hiển thị ""...""
+  - Hành động: '10' (like count) + heart icon, 'Copy Link', 'Xem chi tiết'
+
+Function:
+- Click thẻ: Mở trang/chi tiết bài kudo
+- Click heart: Toggle like, tăng/giảm số lượt thả tim và trạng thái active của nút heart.
+- Click 'Copy Link': Sao chép URL vào clipboard, hiện toast xác nhận 'Link copied — ready to share!'
+- Click 'Xem chi tiết': Điều hướng tới chi tiết bài
+
+State:
+- Active/center: Nổi bật hơn
+- Inactive: Mờ/che về 2 bên, không tương tác chính
+- Nút heart: chưa click hiển thị màu xám, click hiển thị màu đỏ
+
+Trường hợp không có Kudos nào, hiển thị text 'Hiện tại chưa có Kudos nào.'",,,,,Optional,,,,,,,,,active,75400c87-8cec-4ba8-a125-c72ddf660a9f
+B.3.1,Avatar người gửi,I2940:13465;335:9443;256:4734,avatar,"Ảnh đại diện người gửi kudos, lấy theo ảnh đại diện gmail.
+Function:
+- Click: Mở profile người gửi
+- Hover: mở preview profile",while_hovering,,,,Optional,,,,,,,,,active,70f00055-03e8-49e6-b2ba-44acf2a71931
+B.3.2,Thông tin người gửi,I2940:13465;335:9443;256:4737,label,"Hiển thị thông tin của người gửi.
+
+- Display: họ và tên, phòng ban, số hoa thị
+
+Function:
+- Click vào tên: chuyển hướng đến trang profile người gửi
+- Hover vào tên: hiển thị preview profile người gửi
+- Hover vào số hoa thị: hiển thị text mô tả logic hiển thị số hoa thị.
+
+Logic hiển thị số hoa thị:
+1 hoa thị: Sunner đã nhận được 10 Kudos và bắt đầu lan tỏa năng lượng ấm áp đến mọi người xung quanh.
+
+2 hoa thị: Sunner đã nhận được 20 Kudos và chứng minh sức ảnh hưởng của mình qua những hành động lan tỏa tích cực mỗi ngày.
+
+3 hoa thị: Sunner đã nhận được 50 Kudos và trở thành hình mẫu của sự công nhận, sẻ chia và lan tỏa tinh thần Sun*.",,,,,Optional,,,,,,,,,active,f4eb8d21-e97f-492a-9d06-4ef3038150d7
+B.3.4,Icon mũi tên,I2940:13465;335:9444,icon,"Nút mũi thể hiện lời cảm ơn được gửi từ người gửi đến người nhận
+Function:
+- Không tương tác",,,,,Optional,,,,,,,,,active,d7e9dbac-46c7-43f6-915a-beab1dcd332e
+B.3.5,Avatar người nhận,I2940:13465;335:9446;256:4734,avatar,"Ảnh đại diện người nhận kudos, lấy theo ảnh đại diện gmail.
+Function:
+- Click: Mở profile người nhận
+- Hover: mở preview profile",while_hovering,,,,Optional,,,,,,,,,active,02f2e900-cb69-451f-8b92-56a4dac9a225
+B.3.6,Thông tin người nhận,I2940:13465;335:9446;256:4737,label,"Hiển thị thông tin của người nhận.
+
+- Display: họ và tên, phòng ban, số hoa thị
+
+Function:
+- Click vào tên: chuyển hướng đến trang profile người nhận
+- Hover vào tên: hiển thị preview profile người nhận
+- Hover vào số hoa thị: hiển thị text mô tả logic hiển thị số hoa thị.
+
+Logic hiển thị số hoa thị:
+1 hoa thị: Sunner đã nhận được 10 Kudos và bắt đầu lan tỏa năng lượng ấm áp đến mọi người xung quanh.
+
+2 hoa thị: Sunner đã nhận được 20 Kudos và chứng minh sức ảnh hưởng của mình qua những hành động lan tỏa tích cực mỗi ngày.
+
+3 hoa thị: Sunner đã nhận được 50 Kudos và trở thành hình mẫu của sự công nhận, sẻ chia và lan tỏa tinh thần Sun*.",,,,,Optional,,,,,,,,,active,c0144b6d-b1f3-4ac4-89be-4080b2ac4d3f
+B.4,Nội dung lời cảm ơn,I2940:13465;335:9448,card,"Hiển thị nội dung lời cảm ơn trong thẻ Kudos.
+
+Display:
+  - Thời gian đăng tải lời cảm ơn: '10:00 - 10/30/2025'
+  - Nội dung: Lời cảm ơn, hiển thị tối đa 3 dòng. Nếu quá 3 dòng hiển thị ""...""
+  - Tags: danh sách hashtag (ví dụ '#Dedicated'), tối đa 5 hashtag hiển thị trên 1 dòng, nếu quá 1 dòng hiển thị ""...""
+
+Function:
+- Click nội dung: mở trang chi tiết kudos",,,,,Optional,,,,,,,,,active,2bc74852-d3ad-47af-b37f-a6ff61361af6
+B.4.1,Thời gian đăng,I2940:13465;335:9449,label,"Nhãn hiển thị thời gian đăng bài (giờ - ngày).
+
+Function:
+- Hiển thị theo định dạng: giờ - ngày/tháng/năm
+- Interaction: Không tương tác, chỉ để đọc",,,,,Optional,,,,,,,,,active,52149df4-d226-4d9c-b27c-3e7415629058
+B.4.2,Nội dung,I2940:13465;335:9450,card_text,"Hiển thị nội dung kudos.
+
+Hiển thị:
+  - Nội dung: Lời cảm ơn, hiển thị tối đa 3 dòng. Nếu quá 3 dòng hiển thị ""...""
+
+Chức năng:
+- Click thẻ: Mở trang/chi tiết bài kudo",,,,,Optional,,,,,,,,,active,3070e82d-566b-4663-9941-7cb7efc6932b
+B.4.3,Hashtag,I2940:13465;335:9458,label,"Dòng hiển thị các hashtag trong Kudos, ví dụ '#Dedicated #Inspring...'.
+Display:
+  - Tags: danh sách hashtag (ví dụ '#Dedicated'), tối đa 5 hashtag hiển thị trên 1 dòng, nếu quá 1 dòng hiển thị ""...""
+Function:
+- Click 1 tag: chỉnh filter Hashtag thành tag này và thay đổi view Highlight Kudos và All Kudos thành các lời cảm ơn có chứa tag này",,,,,Optional,,,,,,,,,active,9fa3f446-0953-4589-8f5b-744f9a1fa752
+B.4.4,Action,I2940:13465;335:9461,action_bar,"Thanh hành động trong thẻ Kudos, hiển thị lượt thích và các thao tác chia sẻ/chi tiết.
+
+Display:
+  - Lượt thích: '10' - số lượt thích + icon trái tim (màu xám với trạng thái inactive - chưa tim, màu đỏ với trạng thái active - đã tim)
+  - Copy Link: text button - 'Copy Link'
+  - Xem chi tiết: text button - 'Xem chi tiết'
+
+Function:
+- Click 'Copy Link': Sao chép URL vào clipboard, hiện toast xác nhận 'Link copied — ready to share!'
+- Click 'Xem chi tiết': Điều hướng tới chi tiết bài
+- Click trái tim: toggle like, cập nhật số (tăng/giảm) và trạng thái active/disabled tạm thời",,,,,Optional,,,,,,,,,active,82d06f09-56b0-49aa-8fe2-1900bc2bae68
+B.5,slide,2940:13471,navigation,"Hiển thị trạng thái và điều khiển trang trong carousel.
+
+Display:
+  - Mũi tên trái: icon button
+  - Chỉ số trang: '2/5' (text)
+  - Mũi tên phải: icon button
+
+Function:
+- click mũi tên trái: chuyển về slide trước (nếu là slide đầu: disabled) + thay đổi số trang
+- click mũi tên phải: chuyển sang slide tiếp theo (nếu là slide cuối: disabled) + thay đổi số trang",,,,,Optional,,,,,,,,,active,f588b9dc-7154-4fab-ab16-9f2605a9b3c0
+B.5.1,Button lùi,2940:13472,button,"Nút lùi điều hướng carousel.
+
+Function:
+- Click: Chuyển carousel sang card trước đó
+- Trường hợp đang ở page 1 (card đầu tiên) thì disable nút này",,,,,Optional,,,,,,,,,active,90c0a7fb-a3bf-435f-bf39-a8b81ee513ec
+B.5.2,số trang,2940:13473,label,"Hiển thị chỉ số trang của carousel '2/5'.
+
+Function:
+- Cập nhật khi chuyển slide, không tương tác",,,,,Optional,,,,,,,,,active,10499316-92c5-47d7-a5fe-ddee1c2f9cd5
+B.5.3,Button tiến,2940:13474,button,"Nút chuyển sang mục kế tiếp trong carousel.
+
+Function:
+- Click: Trượt carousel sang item tiếp theo
+- Trường hợp ở trang 5 (card thứ 5) thì disable nút này",,,,,Optional,,,,,,,,,active,f3bd9214-db4d-4958-81dc-23c39db8962b
+B.6,Header Giải thưởng,2940:13476,info_block,"Header trang cho phần Spotlight mô tả sự kiện và khu vực.
+
+Display:
+  - Title: 'Sun* Annual Awards 2025' - văn bản chính
+  - Subtitle: 'SPOTLIGHT BOARD' - phần mô tả khu vực
+
+Function:
+- Display: Định vị và tách phần Spotlight khỏi các section khác.",,,,,Optional,,,,,,,,,active,4c85cccd-9816-483d-9847-f71a1cfc29e3
+B.7,Spotlight,2940:14174,info_block,"Bảng tương tác hiển thị tên người nhận Kudos dưới dạng word cloud/diagram.
+
+Display:
+  - Canvas: Vùng hiển thị nhiều tên nhỏ dàn trải - interactive
+  - Header: '388 KUDOS' và thanh tìm kiếm nhỏ - thông tin tổng quát, trong đó 388 là tổng số KUDOS của hệ thống được query từ DB
+
+Function:
+- Hover: Hiển thị tooltip với tên và thời gian nhận Kudos
+- Click node: Mở chi tiết Kudos tương ứng
+- Pan/Zoom: Hỗ trợ pan và zoom bằng nút 'Pan/Zoom' và thao tác chuột
+- State: Hỗ trợ loading, empty (không dữ liệu) và interactive",,,,,Optional,,,,,,,,,active,5b38c8d6-fb37-4728-95e8-8d26a2f7240d
+B.7.1,388 KUDOS,3007:17482,label,"Tiêu đề thông tin tổng quan của Spotlight board.
+
+Function:
+- Display: Hiển thị tổng số '388 KUDOS' rõ ràng ở đầu khung Spotlight, số KUDOS được query từ DB.",,,,,Optional,,,,,,,,,active,d3581054-5d0c-4581-9773-c91ceb55625a
+B.7.2,Pan zoom,3007:17479,button,"Icon điều khiển chế độ pan/zoom trên bản đồ Spotlight.
+
+Function:
+- Click: Toggle giữa chế độ pan và zoom trên Spotlight.
+- Hover: Hiển thị tooltip 'Pan/Zoom'.",,,,,Optional,,,,,,,,,active,b6be3aff-4df4-4d33-bf59-62d83415da7b
+B.7.3,Tìm kiếm sunner,2940:14833,text_form,"Thanh tìm kiếm để tìm profile Sunner.
+
+Hiển thị:
+- Input: ô nhập, placeholder 'Tìm kiếm'
+- Icon: kính lúp
+
+Chức năng:
+- Gõ: nhập từ khóa
+- Enter/Click icon: thực hiện tìm kiếm
+- Focus: hiển thị viền focus",,,,string,Optional,,100,,,"Tối đa 100 ký tự
+Không bắt buộc",,,,active,a92088c8-bf01-414b-8312-7ad189ea7696
+C,All kudos,2940:13475,list,"Danh sách 'ALL KUDOS' hiển thị feed các lời cảm ơn cùng thanh thông tin phụ bên phải.
+
+Display:
+  - Title: 'ALL KUDOS' - heading
+ - Sub title: 'Sun* Annual Awards 2025'
+  - Danh sách thẻ: card gồm thông tin người gửi, thông tin người nhận, thời gian đăng tải, nội dung lời cảm ơn, gallery, danh sách hashtag, số tim, button copy link
+  - Sidebar: info box thống kê (Số Kudos nhận/đã gửi/tim/Secret Box), nút 'Mở quà', hai danh sách nhỏ leaderboard
+
+Function:
+- Click thẻ: mở trang/nội dung chi tiết của kudos
+- Click heart/like: toggle like, tăng/giảm số '10' và đổi trạng thái active
+- Click 'Copy Link': copy URL, hiển thị toast xác nhận
+- Pagination / scroll: infinity scroll
+- Click 'Mở quà': mở dialog mở quà
+- Click avatar/tên bất kỳ: mở profile
+
+State:
+- Nội dung dài: hiển thị truncated với '...' và có cách xem full
+- Nút 'Mở quà' có thể disabled nếu không đủ điều kiện",,,,,Optional,,,,,,,,,active,52e2353b-df7d-4a27-803a-9b6a6a7da3df
+C.1,Header Giải thưởng,2940:14221,section_header,"Tiêu đề cho mục 'ALL KUDOS' trên trang Giải thưởng.
+
+Display:
+  - 'Sun* Annual Awards 2025' (sub-title)
+  - 'ALL KUDOS' (title lớn)
+
+Function:
+- Static: hiển thị tiêu đề, không tương tác
+- Vai trò: phân vùng nội dung, giúp người dùng định vị",,,,,Optional,,,,,,,,,active,50c0c68f-60d5-43c7-adeb-ebff8b9443c2
+C.2,Danh sách lời cảm ơn,2940:13482,list,"Danh sách 'Kudos' dạng thẻ, hiển thị lời cảm ơn và metadata.
+Hiển thị: gồm thông tin người gửi, thông tin người nhận, thời gian đăng tải, nội dung lời cảm ơn, gallery, danh sách hashtag, số tim, button copy link
+
+Chức năng: Click heart toggle like và cập nhật số; Click 'Copy Link' sao chép; Click thẻ mở chi tiết, click avatar hoặc tên mở profile
+
+Trường hợp không có Kudos nào, hiển thị text 'Hiện tại chưa có Kudos nào.'",,,,,Optional,,,,,,,,,active,9894d096-5d45-42be-9653-8a7930d0e90f
+D,Thống menu phải,2940:13488,info_block,"Sidebar thống kê và danh sách member nổi bật.
+
+Display:
+  - Sidebar thống kê: bao gồm các số liệu nổi bật của user và button Mở quả
+  - Lists: '10 SUNNER CÓ SỰ THĂNG HẠNG MỚI NHẤT' và '10 SUNNER NHẬN QUÀ MỚI NHẤT' (avatar + tên + mô tả)
+
+Function:
+- Click 'Mở quà': mở dialog mở phần thưởng
+- Click avatar hoặc tên member: mở profile member
+- Sidebar có scroll độc lập
+
+State:
+- List rỗng: hiển thị 'Chưa có dữ liệu'",,,,,Optional,,,,,,,,,active,ad736b1f-9cc7-464e-8b5d-daa3bd467fce
+D.1,Thống kê tổng quat,2940:13489,info_block,"Hiển thị tổng quan số Kudos và Secret Box ở cột phải.
+Display:
+ - 6 dòng số liệu: label + giá trị (ví dụ 'Số Kudos bạn nhận được: 25')
+ - Nút: 'Mở quà'
+Function:
+ - Hiển thị: hiện các giá trị số
+ - Click 'Mở quà': mở dialog mở quà",,,,,Optional,,,,,,,,,active,59a7853f-e2fa-4605-acbc-06d669c7cbc5
+D.1.2,Số kudos nhận được,2940:13491,info_block,"Mục hiển thị tổng 'Số Kudos bạn nhận được: 25' ở thanh bên.
+Function:
+- Display: Hiển thị nhãn 'Số Kudos bạn nhận được:' và giá trị '25'",,,,,Optional,,,,,,,,,active,2346a9fb-8b15-4a0c-9e5f-928fba09ff27
+D.1.3,Số kudos đã gửi,2940:13492,info_block,"Mục hiển thị tổng 'Số Kudos bạn đã gửi: 25' ở thanh bên.
+Function:
+- Display: Hiển thị nhãn 'Số Kudos bạn đã gửi:' và giá trị '25'",,,,,Optional,,,,,,,,,active,e6cb3781-8a45-4fce-84e4-0418480400d1
+D.1.4,Số tim,3241:14882,label,"Mục hiển thị tổng 'Số tim bạn nhận được: 25' ở thanh bên.
+Function:
+- Display: Hiển thị nhãn 'Số tim bạn nhận được:' và giá trị '25'",,,,,Optional,,,,,,,,,active,27f96bd7-69ba-4633-96ae-37f50efb441c
+D.1.5,phân cách nội dung,2940:13494,divider,"Phân cách ngang tách các khối nội dung trên giao diện, đường mảnh trang trí.
+
+Function:
+- Hiển thị: đường ngang dùng để phân đoạn nội dung
+- Hành vi: không tương tác, chỉ dùng để phân đoạn nội dung",,,,,Optional,,,,,,,,,active,8c793eaf-184f-493b-b9ed-96745da48211
+D.1.6,Số secret box đã mở,2940:13495,info_block,"Mục hiển thị tổng 'Số Secret Box bạn đã mở: 25' ở thanh bên.
+Function:
+- Display: Hiển thị nhãn 'Số Secret Box bạn đã mở:' và giá trị '25'",,,,,Optional,,,,,,,,,active,b4662cd6-95d9-4c02-bb8a-b4dd13b6c0db
+D.1.7,Số Secret Box chưa mở,2940:13496,info_block,"Mục hiển thị tổng 'Số Secret Box chưa mở: 25' ở thanh bên.
+Function:
+- Display: Hiển thị nhãn 'Số Secret Box chưa mở:' và giá trị '25'",,,,,Optional,,,,,,,,,active,39b18f9c-42ad-4895-aecb-682d5a5d8cbe
+D.1.8,Button mở quà,2940:13497,button,"Nút 'Mở quà' trên sidebar để mở hộp quà cá nhân.
+
+Function:
+- Click: Mở dialog mở 'Secret Box'",on_click,Open secret box- chưa mở ,,,Optional,,,,,,,,,active,9d25b434-a324-4527-969e-d6182d087ccc
+D.3,10 SUNNER nhận quà,2940:13510,list_item,"Hiển thị nhanh 10 Sunner vừa nhận quà mới nhất.
+
+Display:
+  - Header: Text - '10 SUNNER NHẬN QUÀ MỚI NHẤT'
+  - List: Vertical list - mỗi mục gồm avatar (circle), tên người, mô tả quà nhỏ
+
+Function:
+- Click avatar hoặc tên: Mở trang profile
+- Hover avatar hoặc tên: Mở preview profile
+- Scroll: cho phép cuộn khi vượt chiều cao khung",,,,,Optional,,,,,,,,,active,00a781af-963a-4937-8538-fe7b2cf35bf9
+D.3.1,title,2940:13513,label,"Tiêu đề khối '10 SUNNER NHẬN QUÀ
+MỚI NHẤT' trên sidebar.
+
+Function:
+- Hiển thị: Chỉ label, không interactive",,,,,Optional,,,,,,,,,active,73f617cc-cc68-4480-9016-e4012951ca23
+D.3.2,Thông tin Sunner nhận quà,2940:13516,list_item,"Hiển thị thông tin ngắn của người được nhận quà.
+
+Hiển thị:
+  - Avatar: hình tròn nhỏ (nếu có)
+  - Tên: 'Huỳnh Dương Xuân'
+  - Mô tả về quà tặng nhận được
+
+Chức năng:
+- Click tên/avatar: mở trang profile người dùng
+- Hover tên/avatar: hiển thị preview profile ",,,,,Optional,,,,,,,,,active,4928783f-4f79-4aae-bae6-dc9fbc491e2e
+D.3.3,Thông tin Sunner nhận quà,2940:13517,list_item,Hiển thị và tính năng giống item D.3.2,,,,,Optional,,,,,,,,,active,98abb5df-8907-4501-9f26-e642ffb35c1f
+D.3.4,Prize Recipient Info,2940:13518,list_item,"Displays information about a Sunner who received a prize/gift.
+
+Display:
+  - Avatar: circular profile image (64x64px, white border 1.87px)
+  - Name: 'Huỳnh Dương Xuân' - bold 22px, gold/yellow color (#FFEA9E)
+  - Prize description: 'Nhận được 1 áo phông SAA' - 16px, white, right-aligned
+  - Layout: horizontal row with 8px gap (avatar left, text block right)
+
+Function:
+- Static display: shows prize recipient information in the lucky draw/gift section
+- Data source: populated from prize draw results
+- Multiple instances: one per prize recipient in the list",,,,,,,,,,,,,,active,ef6bfe20-4121-4f40-ae4b-ac454cff1836
+D.3.5,Thông tin Sunner nhận quà,2940:13519,list_item,Hiển thị và tính năng giống item D.3.2,,,,,Optional,,,,,,,,,active,cb502eb7-0dfa-413a-b32b-0a4b970a1cce
+D.3.6,Thông tin Sunner nhận quà,2940:13520,list_item,Hiển thị và tính năng giống item D.3.2,,,,,Optional,,,,,,,,,active,6ea7ad49-b230-40cb-90d5-97fb9d89b857
+D.4,hashtag,I3127:21871;2234:33038,button,"Thể hiện tag/hashtag cho một Kudos.
+
+Function:
+- Click: Lọc danh sách để chỉ hiển thị Kudos thuộc 'IDOL GIỚI TRẺ'.",,,,,Optional,,,,,,,,,active,5a59e33b-e2ff-4078-a3d6-19715db5156c
+C.3,KUDOpost,3127:21871,card,"Thẻ KUDO hiển thị bài cảm ơn.
+
+Hiển thị: thông tin người gửi, thông tin người nhận, thời gian đăng tải, nội dung lời cảm ơn, gallery, danh sách hashtag, số tim, button copy link
+
+Chức năng: Click avatar hoặc tên mở profile; ảnh mở full hình ảnh; 'Copy Link' sao chép link; tim để tăng/giảm tim",,,,,Optional,,,,,,,,,active,df44bc27-adb6-4291-bbc7-94a9a29abf3c
+C.4,Button,I3127:21871;256:5194,button,"Thanh hành động trong thẻ Kudos, hiển thị lượt thích và các thao tác chia sẻ/chi tiết.
+
+Display:
+  - Lượt thích: '10' - số lượt thích + icon trái tim (màu xám với trạng thái inactive - chưa tim, màu đỏ với trạng thái active - đã tim)
+  - Copy Link: text button - 'Copy Link'
+
+Function:
+- Click 'Copy Link': Sao chép URL vào clipboard, hiện toast xác nhận 'Link copied — ready to share!'
+- Click trái tim: toggle like, cập nhật số (tăng/giảm) và trạng thái active/disabled tạm thời",,,,,Optional,,,,,,,,,active,687de78f-d83e-4abd-b503-842377b1f148
+C.3.1,Thông tin người gửi,I3127:21871;256:4858,info_block,"Khối hiển thị thông tin người gửi trong thẻ kudos.
+
+Display:
+  - Ảnh đại diện
+  - Họ và tên
+  - Thông tin phụ: Số hoa thị, danh hiệu tương ứng
+
+Function:
+- Click avatar hoặc tên: mở profile
+- Hover avatar hoặc tên: mở preview profile",while_hovering,,,,Optional,,,,,,,,,active,e13322f4-29ac-4ee1-9349-b96b40ef62f3
+C.4.1,Hearts,I3127:21871;256:5175,button,"Nút heart hiển thị số lượt thả tim của 1 kudo và biểu tượng trái tim.
+State:
+- Chưa tim: biểu tượng tim màu xám
+- Đã tim: biểu tượng tim màu đỏ
+Function:
+- Click: đổi số lượt tim và màu sắc của biểu tượng tim. Quy tắc:
++ Mỗi người dùng chỉ có một lượt thả tim duy nhất cho 1 một kudos.
++ Người gửi kudos sẽ bị disable nút tim (không thể thả tim cho kudos của chính mình gửi)
++ Ứng với 1 lượt thả tim trên kudos, tài khoản gửi lời cảm ơn (tài khoản gửi kudo tương ứng) sẽ được cộng 1 tim.
++ Nếu lượt thả tim diễn ra trong những ngày đặc biệt (do admin cấu hình) thì tài khoản gửi kudos sẽ được cộng 2 tim
++ Người dùng có thể hủy bỏ lượt thả tim. Số tim trên tài khoản nhận kudos sẽ bị thu hồi tương ứng 1 tim hoặc 2 tim.",,,,,Optional,,,,,,,,Cần phân biệt lượt thả tim bình thường và lượt thả tim đặc biệt (thả trong ngày đặc biệt do admin set) để thu hồi đúng số tim đã cộng cho người nhận kudo.,active,e50c36f8-d414-4890-b3e1-f1393beafadc
+C.3.2,icon sent,I3127:21871;256:5161,icon,"Biểu tượng trạng thái 'sent' hiển thị trên thẻ Kudos, kích thước nhỏ, đặt dọc bên phải nội dung.
+
+Function:
+không tương tác",,,,,Optional,,,,,,,,,active,b91f7382-81c4-4229-92ef-21b5b570289d
+C.4.2,Copylink button,I3127:21871;256:5216,button,"Nút 'Copy Link' để sao chép URL của kudos.
+
+Function:
+- Click 'Copy Link': Sao chép URL vào clipboard, hiện toast xác nhận 'Link copied — ready to share!'",,,,,Optional,,,,,,,,,active,41ecf4fc-722a-4f1e-9a98-05c62c831cf1
+C.3.3,thông tin người nhận,I3127:21871;256:4860,info_block,"Khối hiển thị thông tin người nhận trong thẻ kudos.
+
+Display:
+
+- Ảnh đại diện
+- Họ và tên
+- Thông tin phụ: phòng ban (vd: CEVC10), danh hiệu tương ứng
+
+Function:
+
+- Click avatar hoặc tên: mở profile
+- Hover avatar hoặc tên: mở preview profile",while_hovering,Hover Avatar info user,,,Optional,,,,,,,,,active,ec5c1854-61f6-4ef7-a779-7220fe668e6b
+C.3.4,Thời gian,I3127:21871;256:5229,label,"Hiển thị nhãn thời gian đăng tải của kudos.
+
+Function:
+- Hiển thị: '10:00 - 10/30/2025'
+- Format: 'HH:mm - MM/DD/YYYY'
+- Tương tác: read-only, không thể sửa",,,,,Optional,,,,,,,,,active,2e98eb62-cf6c-413a-91e5-dde787aa8d89
+C.3.5,content,I3127:21871;256:5155,card,"Hiển thị nội dung kudos.
+
+Hiển thị:
+  - Nội dung: Lời cảm ơn, hiển thị tối đa 5 dòng. Nếu quá 5 dòng hiển thị ""...""
+
+Chức năng:
+- Click thẻ: Mở trang/chi tiết bài kudo",,,,,Optional,,,,,,,,,active,6cd9ed13-e2a4-4d6c-96e8-edda19811fc7
+C.3.6,Image đính kèm,I3127:21871;256:5176,attachment_images,"Nhóm ảnh đính kèm trong thẻ kudos, hiển thị ảnh thu nhỏ theo hàng ngang.
+Display:
+  - Ảnh thu nhỏ: nhiều ảnh vuông, xếp ngang
+  - Hiển thị tối đa 5 ảnh, căn lề trái
+Function:
+- Click ảnh: mở full ảnh lớn",,,,,Optional,,,,,,,,,active,490d9085-1734-4bc3-ae97-db9e26f47abc
+C.3.7,Hashtag,I3127:21871;256:5158,label,"Dòng hiển thị các hashtag trong Kudos, ví dụ '#Dedicated #Inspring...'.
+Display:
+  - Tags: danh sách hashtag (ví dụ '#Dedicated'), tối đa 5 hashtag hiển thị trên 1 dòng, nếu quá 1 dòng hiển thị ""...""
+Function:
+- Click 1 tag: chỉnh filter Hashtag thành tag này và thay đổi view Highlight Kudos và All Kudos thành các lời cảm ơn có chứa tag này",,,,,Optional,,,,,,,,,active,65633266-7562-463f-8e1e-7b0df2fab450
+C.5,KUDOpost,3127:22053,list_item,Hiển thị và tính năng tương tự C.3 và C.4,,,,,Optional,,,,,,,,,active,48d6744c-3f7b-456f-a793-206d09ee58af
+C.6,KUDOpost,3127:22375,list_item,Hiển thị và tính năng tương tự C.3 và C.4,,,,,Optional,,,,,,,,,active,0beeaada-d4c3-4712-a11b-426427f7960b
+C.7,KUDOpost,3127:22439,list_item,Hiển thị và tính năng tương tự C.3 và C.5,,,,,Optional,,,,,,,,,active,0992dd08-f613-4f16-9e48-c010b058064d

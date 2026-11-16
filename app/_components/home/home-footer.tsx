@@ -2,7 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 
 import type { HomeMessages } from "@/lib/i18n/home-messages";
-import { HOME_PATH, getFooterNavItems, navLinkClass } from "./home-nav-items";
+import { HOME_PATH, footerNavLinkClass, getFooterNavItems } from "./home-nav-items";
 
 type HomeFooterProps = { t: HomeMessages; activePath?: string };
 
@@ -22,7 +22,7 @@ export function HomeFooter({ t, activePath = HOME_PATH }: HomeFooterProps) {
                 key={href}
                 href={href}
                 aria-current={href === activePath ? "page" : undefined}
-                className={`${navLinkClass(href === activePath)} text-base leading-6 tracking-[0.15px]`}
+                className={`${footerNavLinkClass(href === activePath)} text-base leading-6 tracking-[0.15px]`}
               >
                 {label}
               </Link>

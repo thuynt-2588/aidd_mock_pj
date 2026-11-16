@@ -31,3 +31,13 @@ export function navLinkClass(selected: boolean): string {
     ? `${base} rounded-none border-b border-saa-accent text-saa-accent [text-shadow:0_4px_4px_rgba(0,0,0,0.25),0_0_6px_#fae287]`
     : `${base} text-saa-text`;
 }
+
+// Footer link (Figma 2940:13522 "Button-IC"): the selected item is NOT the
+// header style — white text with the same glow on a rgba(255,234,158,.1) fill,
+// no underline, square corners.
+export function footerNavLinkClass(selected: boolean): string {
+  const base = "p-4 font-bold text-saa-text transition-colors focus-visible:outline-2 focus-visible:outline-saa-accent";
+  return selected
+    ? `${base} bg-saa-accent-soft [text-shadow:0_4px_4px_rgba(0,0,0,0.25),0_0_6px_#fae287]`
+    : `${base} rounded hover:bg-saa-accent-soft`;
+}

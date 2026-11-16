@@ -8,6 +8,9 @@ const BASE_URL = EXTERNAL_BASE_URL ?? "http://127.0.0.1:3000";
 export default defineConfig({
   testDir: "./e2e",
   fullyParallel: true,
+  // The default (half the CPU cores) overloads `next dev`: signed-in pages
+  // such as /sun-kudos then miss timeouts. 3 workers stay reliable.
+  workers: 3,
   forbidOnly: !!process.env.CI,
   retries: 0,
   reporter: "list",

@@ -1,13 +1,12 @@
 "use client";
 
 import Link from "next/link";
-import { useState, useTransition } from "react";
 
 import { formatHeartCount } from "@/lib/kudos/format";
 import { kudoDetailPath } from "@/lib/kudos/filters";
 import type { KudosMessages } from "@/lib/i18n/kudos-messages";
-import { toggleKudoHeartAction } from "../actions";
 import { ArrowUpRightIcon, HeartIcon, LinkIcon } from "./kudos-icons";
+import { useKudoHeart } from "./kudo-hearts";
 import { useToast } from "./kudos-toast";
 
 type KudoActionsProps = {
@@ -19,7 +18,7 @@ type KudoActionsProps = {
   showDetail: boolean;
   t: Pick<
     KudosMessages,
-    "copyLink" | "viewDetail" | "linkCopied" | "heartLabel" | "ownKudosHeart"
+    "copyLink" | "viewDetail" | "linkCopied" | "heartLabel" | "ownKudosHeart" | "heartFailed"
   >;
 };
 
@@ -36,28 +35,8 @@ export function KudoActions({
   t,
 }: KudoActionsProps) {
   const toast = useToast();
-  const [state, setState] = useState({
-    hearted: heartedByMe,
-    count: heartCount,
-  });
-  const [pending, startTransition] = useTransition();
-
-  const toggleHeart = () => {
-    const previous = state;
-    // Optimistic: flip now, reconcile with the server's numbers.
-    setState({
-      hearted: !previous.hearted,
-      count: previous.count + (previous.hearted ? -1 : 1),
-    });
-    startTransition(async () => {
-      try {
-        const result = await toggleKudoHeartAction(kudoId);
-        setState({ hearted: result.hearted, count: result.heartCount });
-      } catch {
-        setState(previous);
-      }
-    });
-  };
+  // Shared with every other card of this kudos on the board (kudo-hearts.tsx).
+  const heart = useKudoHeart(kudoId, { hearted: heartedByMe, count: heartCount }, t.heartFailed);
 
   const copyLink = async () => {
     const url = `${window.location.origin}${kudoDetailPath(kudoId)}`;
@@ -78,18 +57,18 @@ export function KudoActions({
   const heartButton = (
     <button
       type="button"
-      onClick={toggleHeart}
-      disabled={isOwn || pending}
-      aria-pressed={state.hearted}
-      aria-label={`${t.heartLabel}: ${state.count}`}
+      onClick={heart.toggle}
+      disabled={isOwn || heart.pending}
+      aria-pressed={heart.hearted}
+      aria-label={`${t.heartLabel}: ${heart.count}`}
       title={isOwn ? t.ownKudosHeart : undefined}
       className="flex items-center gap-1 rounded text-2xl font-bold leading-8 text-saa-bg disabled:cursor-not-allowed disabled:opacity-60 focus-visible:outline-2 focus-visible:outline-saa-bg"
     >
-      <span>{formatHeartCount(state.count)}</span>
+      <span>{formatHeartCount(heart.count)}</span>
       <span
-        className={`flex ${state.hearted ? "text-saa-badge" : "text-saa-muted"}`}
+        className={`flex ${heart.hearted ? "text-saa-badge" : "text-saa-muted"}`}
       >
-        <HeartIcon filled={state.hearted} />
+        <HeartIcon filled={heart.hearted} />
       </span>
     </button>
   );

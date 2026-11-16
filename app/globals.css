@@ -62,3 +62,15 @@ body {
   border-radius: 8px;
   background: var(--saa-muted);
 }
+
+/* "Viết Kudo" editor + rich-text kudos (app/sun-kudos/_components/write-kudo/
+   rich-text-font.ts): bold look via the variable font's wght axis, font-weight
+   stays 400 so execCommand("bold") toggles <b> correctly; <b>/<strong> heavier. */
+.kudo-rich {
+  font-weight: 400;
+  font-variation-settings: "wght" 700;
+}
+.kudo-rich :is(b, strong) {
+  font-weight: 700;
+  font-variation-settings: "wght" 900;
+}

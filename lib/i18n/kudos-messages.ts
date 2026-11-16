@@ -23,6 +23,8 @@ export interface KudosMessages {
   linkCopied: string;
   heartLabel: string;
   ownKudosHeart: string;
+  /** Toast when a heart could not be saved (it is undone). */
+  heartFailed: string;
   specialDayHearts: string;
   /** Badge hover: title + description per tier. */
   heroHover: Record<HeroBadge, { title: string; text: string }>;
@@ -43,6 +45,55 @@ export interface KudosMessages {
   stats: { received: string; sent: string; hearts: string; boxesOpened: string; boxesUnopened: string };
   openGift: string;
   giftTitle: string;
+  /** Shown instead of the sender of an anonymous kudos without an alias. */
+  anonymousSender: string;
+  /** "Viết Kudo" dialog (MoMorph ihQ26W78P2). */
+  write: WriteKudoMessages;
+}
+
+export interface WriteKudoMessages {
+  title: string;
+  recipient: string;
+  recipientPlaceholder: string;
+  noSunner: string;
+  searching: string;
+  badge: string;
+  badgePlaceholder: string;
+  badgeHint: string;
+  contentLabel: string;
+  contentPlaceholder: string;
+  mentionHint: string;
+  /** Locale for the "0/1.000" counter numbers. */
+  numberLocale: string;
+  counterLabel: string;
+  communityStandards: string;
+  tools: { bold: string; italic: string; strike: string; numbered: string; link: string; quote: string };
+  hashtag: string;
+  hashtagMax: string;
+  removeHashtag: string;
+  image: string;
+  imageMax: string;
+  removeImage: string;
+  imageRejected: string;
+  anonymous: string;
+  anonymousName: string;
+  anonymousPlaceholder: string;
+  cancel: string;
+  send: string;
+  sending: string;
+  sent: string;
+  close: string;
+  link: { title: string; text: string; url: string; save: string };
+  errors: {
+    required: string;
+    tooLong: string;
+    invalid: string;
+    tooMany: string;
+    url: string;
+    receiver: string;
+    failed: string;
+    upload: string;
+  };
 }
 
 const vi: KudosMessages = {
@@ -64,6 +115,7 @@ const vi: KudosMessages = {
   linkCopied: "Link copied — ready to share!",
   heartLabel: "Thả tim",
   ownKudosHeart: "Bạn không thể thả tim cho Kudos của chính mình",
+  heartFailed: "Không thể thả tim lúc này. Vui lòng thử lại.",
   specialDayHearts: "Hôm nay là ngày đặc biệt: mỗi lượt tim được tính x2",
   heroHover: {
     "New Hero": {
@@ -105,6 +157,50 @@ const vi: KudosMessages = {
   },
   openGift: "Mở Secret Box",
   giftTitle: "10 SUNNER NHẬN QUÀ\nMỚI NHẤT",
+  anonymousSender: "Ẩn danh",
+  write: {
+    title: "Gửi lời cám ơn và ghi nhận đến đồng đội",
+    recipient: "Người nhận",
+    recipientPlaceholder: "Tìm kiếm",
+    noSunner: "Không tìm thấy Sunner",
+    searching: "Đang tìm…",
+    badge: "Danh hiệu",
+    badgePlaceholder: "Dành tặng một danh hiệu cho đồng đội",
+    badgeHint: "Ví dụ: Người truyền động lực cho tôi.\nDanh hiệu sẽ hiển thị làm tiêu đề Kudos của bạn.",
+    contentLabel: "Nội dung lời cám ơn",
+    contentPlaceholder: "Hãy gửi gắm lời cám ơn và ghi nhận đến đồng đội tại đây nhé!",
+    mentionHint: "Bạn có thể “@ + tên” để nhắc tới đồng nghiệp khác",
+    numberLocale: "vi-VN",
+    counterLabel: "Số ký tự",
+    communityStandards: "Tiêu chuẩn cộng đồng",
+    tools: { bold: "In đậm", italic: "In nghiêng", strike: "Gạch ngang", numbered: "Danh sách đánh số", link: "Chèn đường dẫn", quote: "Trích dẫn" },
+    hashtag: "Hashtag",
+    hashtagMax: "Tối đa 5",
+    removeHashtag: "Xóa",
+    image: "Image",
+    imageMax: "Tối đa 5",
+    removeImage: "Xóa ảnh",
+    imageRejected: "Chỉ nhận ảnh PNG, JPG, WEBP, GIF tối đa 5 MB.",
+    anonymous: "Gửi lời cám ơn và ghi nhận ẩn danh",
+    anonymousName: "Nickname ẩn danh",
+    anonymousPlaceholder: "Ẩn danh",
+    cancel: "Hủy",
+    send: "Gửi",
+    sending: "Đang gửi…",
+    sent: "Đã gửi Kudos!",
+    close: "Đóng",
+    link: { title: "Thêm đường dẫn", text: "Nội dung", url: "URL", save: "Lưu" },
+    errors: {
+      required: "Vui lòng nhập trường này.",
+      tooLong: "Nội dung quá dài.",
+      invalid: "Giá trị không hợp lệ.",
+      tooMany: "Tối đa 5.",
+      url: "URL phải bắt đầu bằng http:// hoặc https://",
+      receiver: "Vui lòng chọn một Sunner khác trong danh sách.",
+      failed: "Không gửi được Kudos. Vui lòng thử lại.",
+      upload: "Không tải được ảnh lên. Vui lòng thử lại.",
+    },
+  },
 };
 
 const en: KudosMessages = {
@@ -119,6 +215,7 @@ const en: KudosMessages = {
   viewDetail: "View details",
   heartLabel: "Heart",
   ownKudosHeart: "You cannot heart your own kudos",
+  heartFailed: "Could not save your heart. Please try again.",
   specialDayHearts: "Special day: every heart counts x2",
   heroHover: {
     "New Hero": {
@@ -158,6 +255,50 @@ const en: KudosMessages = {
   },
   openGift: "Open Secret Box",
   giftTitle: "10 LATEST SUNNERS\nRECEIVING GIFTS",
+  anonymousSender: "Anonymous",
+  write: {
+    title: "Send thanks and recognition to a teammate",
+    recipient: "Recipient",
+    recipientPlaceholder: "Search",
+    noSunner: "No Sunner found",
+    searching: "Searching…",
+    badge: "Title",
+    badgePlaceholder: "Give your teammate a title",
+    badgeHint: "Example: The one who keeps me motivated.\nThe title is shown as the heading of your Kudos.",
+    contentLabel: "Thank-you message",
+    contentPlaceholder: "Write your thanks and recognition for your teammate here!",
+    mentionHint: "Type “@ + name” to mention another teammate",
+    numberLocale: "en-US",
+    counterLabel: "Characters",
+    communityStandards: "Community standards",
+    tools: { bold: "Bold", italic: "Italic", strike: "Strikethrough", numbered: "Numbered list", link: "Insert link", quote: "Quote" },
+    hashtag: "Hashtag",
+    hashtagMax: "Up to 5",
+    removeHashtag: "Remove",
+    image: "Image",
+    imageMax: "Up to 5",
+    removeImage: "Remove image",
+    imageRejected: "Only PNG, JPG, WEBP or GIF images up to 5 MB.",
+    anonymous: "Send thanks and recognition anonymously",
+    anonymousName: "Anonymous nickname",
+    anonymousPlaceholder: "Anonymous",
+    cancel: "Cancel",
+    send: "Send",
+    sending: "Sending…",
+    sent: "Kudos sent!",
+    close: "Close",
+    link: { title: "Add link", text: "Text", url: "URL", save: "Save" },
+    errors: {
+      required: "Please fill in this field.",
+      tooLong: "This is too long.",
+      invalid: "This value is not valid.",
+      tooMany: "Up to 5.",
+      url: "The URL must start with http:// or https://",
+      receiver: "Please choose another Sunner from the list.",
+      failed: "Could not send the Kudos. Please try again.",
+      upload: "Could not upload the images. Please try again.",
+    },
+  },
 };
 
 const messages: Record<Locale, KudosMessages> = { vi, en };

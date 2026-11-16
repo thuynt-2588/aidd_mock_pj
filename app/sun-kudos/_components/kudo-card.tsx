@@ -6,6 +6,8 @@ import { kudoDetailPath, kudosFilterHref, type KudosFilters } from "@/lib/kudos/
 import type { KudoView } from "@/lib/kudos/kudos-types";
 import type { KudosMessages } from "@/lib/i18n/kudos-messages";
 import { KudoActions } from "./kudo-actions";
+import { KudoContent } from "./kudo-content";
+import { richTextFont } from "./write-kudo/rich-text-font";
 import { PenIcon, SendIcon } from "./kudos-icons";
 import { KudoPersonInfo } from "./kudo-person";
 
@@ -24,6 +26,7 @@ export function KudoCard({ kudo, variant, viewerId, filters, t }: KudoCardProps)
   const highlight = variant === "highlight";
   const { shown, more } = truncateHashtags(kudo.hashtags);
   const detail = kudoDetailPath(kudo.id);
+  const contentId = `kudo-content-${variant}-${kudo.id}`;
 
   return (
     <article
@@ -35,11 +38,11 @@ export function KudoCard({ kudo, variant, viewerId, filters, t }: KudoCardProps)
       }
     >
       <div className="flex items-start justify-between gap-6">
-        <KudoPersonInfo person={kudo.sender} heroHover={t.heroHover} />
+        <KudoPersonInfo person={kudo.sender} heroHover={t.heroHover} anonymousLabel={t.anonymousSender} />
         <span className="flex h-[123px] shrink-0 items-start py-4 text-saa-bg">
           <SendIcon />
         </span>
-        <KudoPersonInfo person={kudo.receiver} heroHover={t.heroHover} />
+        <KudoPersonInfo person={kudo.receiver} heroHover={t.heroHover} anonymousLabel={t.anonymousSender} />
       </div>
       <hr className="border-saa-accent" />
       {/* B.4 is a fixed 240px block (content box 120px), so the action row sits
@@ -57,15 +60,24 @@ export function KudoCard({ kudo, variant, viewerId, filters, t }: KudoCardProps)
             </span>
           </div>
         )}
-        {/* Click on the message opens the kudos detail (page not built yet). */}
-        <Link
-          href={detail}
-          className={`rounded-xl border border-saa-accent bg-saa-card-content px-6 py-4 text-saa-bg transition-colors hover:bg-saa-accent/60 ${highlight ? "lg:h-[120px] lg:shrink-0 lg:overflow-hidden" : ""}`}
+        {/* Click on the message opens the kudos detail (page not built yet). The
+            link is a full-size overlay so links / mentions in the rich text are
+            not nested inside it. */}
+        <div
+          className={`relative rounded-xl border border-saa-accent bg-saa-card-content px-6 py-4 text-saa-bg transition-colors hover:bg-saa-accent/60 ${highlight ? "lg:h-[120px] lg:shrink-0 lg:overflow-hidden" : ""}`}
         >
-          <p className={`${highlight ? "line-clamp-3" : "line-clamp-5"} text-justify text-base font-bold leading-6 tracking-[0.5px] lg:text-xl lg:leading-8 lg:tracking-normal`}>
-            {kudo.content}
-          </p>
-        </Link>
+          {/* Named by the message itself, like the whole box was before. */}
+          <Link href={detail} aria-labelledby={contentId} className="absolute inset-0 rounded-xl" />
+          {/* Rich text ("Viết Kudo") looks bold like the other cards, and the
+              sender's bold is heavier (same styling as the editor). */}
+          <div
+            id={contentId}
+            data-testid="kudo-content"
+            className={`${highlight ? "line-clamp-3" : "line-clamp-5"} ${kudo.contentDoc ? `kudo-rich ${richTextFont.className}` : "font-bold"} whitespace-pre-line text-justify text-base leading-6 tracking-[0.5px] lg:text-xl lg:leading-8 lg:tracking-normal`}
+          >
+            {kudo.contentDoc ? <KudoContent doc={kudo.contentDoc} /> : kudo.content}
+          </div>
+        </div>
         {!highlight && kudo.imageUrls.length > 0 && (
           <div className="flex flex-wrap items-center gap-4">
             {kudo.imageUrls.slice(0, 5).map((src, i) => (
@@ -76,7 +88,8 @@ export function KudoCard({ kudo, variant, viewerId, filters, t }: KudoCardProps)
                 rel="noreferrer"
                 className="relative size-[88px] overflow-hidden rounded-[18px] border border-saa-border bg-white"
               >
-                <Image src={src} alt={`${t.attachmentAlt} ${i + 1}`} fill sizes="88px" className="object-cover" />
+                {/* Uploads live in Supabase Storage (any host in dev): served as is. */}
+                <Image src={src} alt={`${t.attachmentAlt} ${i + 1}`} fill sizes="88px" unoptimized={/^https?:/.test(src)} className="object-cover" />
               </a>
             ))}
           </div>
